@@ -1,26 +1,40 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+
+
+/* Tailwind v4 কাস্টম থিমিং (আলাদা config ফাইল ছাড়া) */
+@theme {
+  --color-dark-bg: #0A0A0A;
+  --color-dark-card: #121212;
+  --color-luxury-gold: #D4AF37;
+  --font-serif: 'Playfair Display', serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+/* লেনিস স্মুথ স্ক্রলের জন্য গ্লোবাল ফিক্স */
+html.lenis, html.lenis body {
+  height: auto !important; /* layout.js এর h-full কে ওভাররাইড করার জন্য */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
 }
 
+.lenis.lenis-smooth [data-lenis-prevent] {
+  scroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* পুরো ওয়েবসাইটের বেস লাক্সারি ডার্ক স্টাইল */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-dark-bg);
+  color: #FFFFFF;
+  overflow-x: hidden;
 }
