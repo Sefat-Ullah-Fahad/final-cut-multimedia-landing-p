@@ -3,7 +3,6 @@
 import Image from "next/image";
 
 export default function SocialGallery() {
-  // আপনার দেওয়া ছবিগুলো থেকে ১২টি ছবি বেছে নেওয়া হয়েছে (প্রতি গ্রিডে ৪টি করে মোট ৩টি গ্রিড)
   const group1Images = [
     "https://finalcutmultimedia.com/wp-content/uploads/2025/10/496857656_2510228855980777_2259413147144370187_n.jpg",
     "https://finalcutmultimedia.com/wp-content/uploads/2025/10/496844314_2510228925980770_7814908319192677181_n.jpg",
@@ -25,8 +24,6 @@ export default function SocialGallery() {
     "https://finalcutmultimedia.com/wp-content/uploads/2025/10/FCM_1535-scaled.jpg",
   ];
 
-  // ভার্টিক্যাল টেক্সট লেবেল
-  const handles = ["@finalcutmultimedia", "@finalcutproduction", "@finalcutbehindthescenes"];
   const imageGroups = [group1Images, group2Images, group3Images];
 
   return (
@@ -41,7 +38,8 @@ export default function SocialGallery() {
             FOLLOW US
           </span>
           <div className="flex items-center gap-[1.5vw] mb-[2vh]">
-            <div className="w-[0.8vw] md:w-[0.2vw] h-[5vh] bg-[#D4AF37]"></div>
+            {/* গোল্ডের বদলে রেড লাইন */}
+            <div className="w-[0.8vw] md:w-[0.2vw] h-[5vh] bg-red-600"></div>
             <h2 className="text-black text-[8vw] md:text-[4vw] font-black tracking-tight uppercase leading-none">
               WE&apos;RE SOCIAL
             </h2>
@@ -51,13 +49,13 @@ export default function SocialGallery() {
           </p>
         </div>
 
-        {/* ডান দিকের সোশ্যাল আইকন (সোনালী রঙের) */}
-        <div className="flex gap-[3vw] md:gap-[1.5vw] text-[#D4AF37]">
+        {/* ডান দিকের সোশ্যাল আইকন (গোল্ডের বদলে রেড কালার) */}
+        <div className="flex gap-[3vw] md:gap-[1.5vw] text-red-600">
           {/* Facebook */}
           <a href="#" className="hover:text-black transition-colors">
             <svg className="w-[6vw] h-[6vw] md:w-[1.5vw] md:h-[1.5vw]" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.408.593 24 1.325 24h11.494v-9.294H9.689v-3.621h3.13V8.411c0-3.1 1.894-4.785 4.659-4.785 1.325 0 2.464.097 2.796.141v3.24l-1.917.001c-1.504 0-1.796.715-1.796 1.763v2.309h3.59l-.467 3.621h-3.123V24h6.126c.732 0 1.325-.592 1.325-1.324V1.325C24 .593 23.408 0 22.675 0z"/></svg>
           </a>
-          {/* TikTok (SVG icon) */}
+          {/* TikTok */}
           <a href="#" className="hover:text-black transition-colors">
             <svg className="w-[6vw] h-[6vw] md:w-[1.5vw] md:h-[1.5vw]" fill="currentColor" viewBox="0 0 24 24"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.12-3.44-3.17-3.8-5.46-.4-2.52.49-5.18 2.34-6.89 1.4-1.28 3.32-1.92 5.21-1.67.01 1.41-.01 2.82.01 4.23-1.02-.32-2.19-.24-3.13.34-.84.5-1.41 1.36-1.5 2.33-.14 1.25.43 2.53 1.46 3.16 1.05.62 2.39.69 3.48.24 1.52-.63 2.52-2.14 2.54-3.8.03-6.28.01-12.56.02-18.84z"/></svg>
           </a>
@@ -72,23 +70,10 @@ export default function SocialGallery() {
       <div className="flex flex-col md:flex-row gap-[6vw] md:gap-[2vw] justify-between">
         
         {imageGroups.map((group, groupIndex) => (
-          <div key={groupIndex} className="flex gap-[3vw] md:gap-[1vw] w-full md:w-1/3">
+          <div key={groupIndex} className="w-full md:w-1/3">
             
-            {/* বাম দিকের ভার্টিক্যাল টেক্সট এবং লাইন */}
-            <div className="flex flex-col items-center justify-end pb-[2vh]">
-              {/* নিচের সোনালী লাইন */}
-              <div className="w-[0.6vw] md:w-[0.2vw] h-[4vh] bg-[#D4AF37] mb-[2vh]"></div>
-              
-              {/* রোটেট করা টেক্সট (Vertical Text) */}
-              <div className="relative h-[25vh] md:h-[15vh] w-[4vw] md:w-[1vw]">
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 -rotate-90 origin-bottom whitespace-nowrap text-black text-[3.5vw] md:text-[0.9vw] font-bold tracking-[0.1em]">
-                  {handles[groupIndex]}
-                </span>
-              </div>
-            </div>
-
-            {/* ২x২ ইমেজের গ্রিড */}
-            <div className="grid grid-cols-2 grid-rows-2 gap-[2vw] md:gap-[1vw] flex-grow">
+            {/* ২x২ ইমেজের গ্রিড (হ্যান্ডেল রিমুভ করা হয়েছে, তাই গ্রিডটি এখন ফুল উইডথ) */}
+            <div className="grid grid-cols-2 grid-rows-2 gap-[2vw] md:gap-[1vw]">
               {group.map((imgSrc, imgIndex) => (
                 <div key={imgIndex} className="relative w-full aspect-square group overflow-hidden cursor-pointer bg-gray-100">
                   <Image
@@ -108,7 +93,7 @@ export default function SocialGallery() {
         ))}
       </div>
 
-      {/* বটম ব্যানার (কার্ডের বদলে আপনার দেওয়া ছবিটি ফুল উইডথ করে বসানো হয়েছে) */}
+      {/* বটম ব্যানার */}
       <div className="w-full mt-[10vh] relative h-[25vh] md:h-[40vh] bg-black overflow-hidden group cursor-pointer">
         <Image
           src="https://finalcutmultimedia.com/wp-content/uploads/2025/10/Untitled-3.jpg"
@@ -117,7 +102,6 @@ export default function SocialGallery() {
           className="object-cover transition-transform duration-700 group-hover:scale-105"
           unoptimized
         />
-        {/* হালকা ডার্ক ওভারলে, যাতে ইমেজটি প্রিমিয়াম লাগে */}
         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
       </div>
 

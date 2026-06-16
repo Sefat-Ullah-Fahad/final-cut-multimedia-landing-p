@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ContactSection() {
   return (
     <>
-      {/* ==================== CONTACT FORM SECTION (DARK) ==================== */}
+      {/* ==================== CONTACT CTA SECTION (DARK) ==================== */}
       <section className="relative w-full py-[15vh] flex flex-col items-center justify-center overflow-hidden">
         
         {/* কন্টাক্ট ব্যাকগ্রাউন্ড ইমেজ এবং ডার্ক ওভারলে */}
@@ -22,75 +23,43 @@ export default function ContactSection() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent"></div>
         </div>
 
-        {/* কন্টাক্ট ফর্ম কন্টেইনার */}
-        <div className="relative z-10 w-full max-w-[90vw] md:max-w-[60vw] flex flex-col items-center">
+        {/* CTA কন্টেন্ট কন্টেইনার (ফর্মের বদলে নতুন ডিজাইন) */}
+        <div className="relative z-10 w-full max-w-[90vw] md:max-w-[60vw] flex flex-col items-center text-center">
           
-          {/* হেডার */}
-          <div className="flex flex-col items-center text-center mb-[8vh]">
-            <span className="text-gray-400 text-[3vw] md:text-[0.9vw] tracking-[0.2em] uppercase font-medium mb-[1.5vh]">
-              CONTACT US
-            </span>
-            <div className="flex items-center gap-[1.5vw]">
-              <div className="w-[0.8vw] md:w-[0.2vw] h-[4vh] bg-[#D4AF37]"></div>
-              <h2 className="text-white text-[8vw] md:text-[4vw] font-black tracking-widest uppercase leading-none">
-                GET IN TOUCH
-              </h2>
-            </div>
+          {/* সাব-হেডার */}
+          <span className="text-gray-400 text-[3.5vw] md:text-[1vw] tracking-[0.2em] uppercase font-medium mb-[2vh]">
+            CONTACT US
+          </span>
+          
+          {/* মেইন হেডার (রেড লাইনসহ) */}
+          <div className="flex flex-col md:flex-row items-center gap-[2vw] md:gap-[1.5vw] mb-[3vh]">
+            <div className="hidden md:block w-[0.2vw] h-[6vh] bg-red-600"></div>
+            <h2 className="text-white text-[8vw] md:text-[4vw] font-black tracking-tight uppercase leading-tight">
+              READY TO BRING YOUR <span className="text-red-600">VISION</span> TO LIFE?
+            </h2>
           </div>
 
-          {/* ফর্ম (আন্ডারলাইন স্টাইল ইনপুট) */}
-          <form className="w-full grid grid-cols-1 md:grid-cols-2 gap-x-[4vw] gap-y-[5vh]">
+          {/* শর্ট ডেসক্রিপশন */}
+          <p className="text-gray-300 text-[4vw] md:text-[1.1vw] max-w-[85vw] md:max-w-[45vw] leading-relaxed mb-[6vh]">
+            Let&apos;s discuss your next big project. Book a call or request a quote today, and let our creative experts handle the rest.
+          </p>
+
+          {/* বুকিং বাটন (ক্লায়েন্টের বুকিং লিংক এখানে বসবে) */}
+          <div className="flex flex-col md:flex-row gap-[4vw] md:gap-[2vw]">
+            <Link 
+              href="#booking-link" 
+              className="bg-red-600 border-[0.2vw] md:border-[0.1vw] border-red-600 text-white font-bold text-[3.5vw] md:text-[1vw] tracking-[0.15em] uppercase px-[10vw] py-[2vh] md:px-[4vw] md:py-[1.5vh] hover:bg-transparent hover:text-red-500 transition-all duration-300"
+            >
+              BOOK A CALL
+            </Link>
             
-            <div className="w-full">
-              <input 
-                type="text" 
-                placeholder="FIRST NAME" 
-                className="w-full bg-transparent border-b-[0.2vw] md:border-b-[0.1vw] border-white/40 text-white text-[3.5vw] md:text-[0.9vw] py-[1.5vh] focus:outline-none focus:border-[#D4AF37] transition-colors placeholder:text-gray-500 uppercase tracking-widest"
-              />
-            </div>
-
-            <div className="w-full">
-              <input 
-                type="text" 
-                placeholder="LAST NAME" 
-                className="w-full bg-transparent border-b-[0.2vw] md:border-b-[0.1vw] border-white/40 text-white text-[3.5vw] md:text-[0.9vw] py-[1.5vh] focus:outline-none focus:border-[#D4AF37] transition-colors placeholder:text-gray-500 uppercase tracking-widest"
-              />
-            </div>
-
-            <div className="w-full">
-              <input 
-                type="tel" 
-                placeholder="PHONE NO." 
-                className="w-full bg-transparent border-b-[0.2vw] md:border-b-[0.1vw] border-white/40 text-white text-[3.5vw] md:text-[0.9vw] py-[1.5vh] focus:outline-none focus:border-[#D4AF37] transition-colors placeholder:text-gray-500 uppercase tracking-widest"
-              />
-            </div>
-
-            <div className="w-full">
-              <input 
-                type="email" 
-                placeholder="EMAIL ADDRESS" 
-                className="w-full bg-transparent border-b-[0.2vw] md:border-b-[0.1vw] border-white/40 text-white text-[3.5vw] md:text-[0.9vw] py-[1.5vh] focus:outline-none focus:border-[#D4AF37] transition-colors placeholder:text-gray-500 uppercase tracking-widest"
-              />
-            </div>
-
-            <div className="w-full md:col-span-2">
-              <input 
-                type="text" 
-                placeholder="MESSAGE" 
-                className="w-full bg-transparent border-b-[0.2vw] md:border-b-[0.1vw] border-white/40 text-white text-[3.5vw] md:text-[0.9vw] py-[1.5vh] focus:outline-none focus:border-[#D4AF37] transition-colors placeholder:text-gray-500 uppercase tracking-widest"
-              />
-            </div>
-
-            <div className="w-full md:col-span-2 flex justify-center mt-[4vh]">
-              <button 
-                type="button"
-                className="border-[0.3vw] md:border-[0.1vw] border-white text-white font-bold text-[3.5vw] md:text-[0.9vw] tracking-[0.2em] uppercase px-[10vw] py-[2vh] md:px-[5vw] md:py-[1.5vh] hover:bg-[#D4AF37] hover:border-[#D4AF37] hover:text-black transition-all duration-300"
-              >
-                SEND
-              </button>
-            </div>
-
-          </form>
+            <Link 
+              href="#quote-link" 
+              className="bg-transparent border-[0.2vw] md:border-[0.1vw] border-white text-white font-bold text-[3.5vw] md:text-[1vw] tracking-[0.15em] uppercase px-[10vw] py-[2vh] md:px-[4vw] md:py-[1.5vh] hover:bg-white hover:text-black transition-all duration-300"
+            >
+              REQUEST A QUOTE
+            </Link>
+          </div>
 
         </div>
       </section>
@@ -99,8 +68,8 @@ export default function ContactSection() {
       <div className="w-full bg-white py-[6vh] md:py-[5vh] flex items-center justify-center">
         <div className="flex items-center gap-[2vw] md:gap-[1vw]">
           
-          {/* ভার্টিক্যাল সোনালী লাইন */}
-          <div className="w-[0.8vw] md:w-[0.2vw] h-[6vh] md:h-[5vh] bg-[#D4AF37]"></div>
+          {/* ভার্টিক্যাল লাইন (গোল্ডের বদলে রেড) */}
+          <div className="w-[0.8vw] md:w-[0.2vw] h-[6vh] md:h-[5vh] bg-red-600"></div>
           
           {/* লোগো এবং নাম */}
           <div className="flex items-center gap-[2vw] md:gap-[1vw]">
@@ -115,7 +84,7 @@ export default function ContactSection() {
               />
             </div>
             
-            {/* কোম্পানির নাম (ডার্ক টেক্সট যাতে সাদা ব্যাকগ্রাউন্ডে ফুটে ওঠে) */}
+            {/* কোম্পানির নাম */}
             <div className="flex flex-col justify-center">
               <span className="text-black text-[6vw] md:text-[2vw] font-black leading-none tracking-tight">
                 FINAL CUT

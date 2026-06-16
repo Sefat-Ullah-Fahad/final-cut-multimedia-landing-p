@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function ClientAndVlogSection() {
   const [selectedVideo, setSelectedVideo] = useState(null);
 
-  // Apnar deya notun client logos
+  // ক্লায়েন্ট লোগোসমূহ
   const clientLogos = [
     "https://res.cloudinary.com/dsga4gyw9/image/upload/v1775294134/Neel_Hawa_j1cmcd.jpg",
     "https://res.cloudinary.com/dsga4gyw9/image/upload/v1775294134/Pathao_n805zn.webp",
@@ -18,10 +18,10 @@ export default function ClientAndVlogSection() {
     "https://res.cloudinary.com/dsga4gyw9/image/upload/v1775294132/RS_Apparels_f1jcd8.jpg"
   ];
 
-  // Loop ti jeno unlimited hoy tai logo array double kora hoyeche
+  // লুপটি যেন আনলিমিটেড হয় তাই লোগো অ্যারে ডাবল করা হয়েছে
   const duplicatedLogos = [...clientLogos, ...clientLogos, ...clientLogos];
 
-  // YouTube video data
+  // YouTube ভিডিও ডেটা (৪র্থ একটি ভিডিও যোগ করা হয়েছে লেআউট সুন্দর করার জন্য)
   const youtubeVideos = [
     {
       id: 1,
@@ -40,6 +40,12 @@ export default function ClientAndVlogSection() {
       title: "PREMIUM CINEMATIC PRODUCTION",
       embedId: "dDv0YyVOpeI",
       thumbnail: "https://img.youtube.com/vi/dDv0YyVOpeI/maxresdefault.jpg",
+    },
+    {
+      id: 4,
+      title: "BEHIND THE SCENES",
+      embedId: "TehKGf4gX94", // ডেমো হিসেবে আগের একটি আইডি ব্যবহার করা হয়েছে
+      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/IMG_2841-scaled.jpeg", // ক্লায়েন্টের গ্যালারি থেকে থাম্বনেইল
     },
   ];
 
@@ -76,22 +82,23 @@ export default function ClientAndVlogSection() {
                   alt={`Client Logo ${index}`}
                   fill
                   className="object-contain"
-                  unoptimized // Client domains er jhamela thekanor jonno
+                  unoptimized
                 />
               </div>
             ))}
           </div>
         </div>
 
-        {/* 2. YouTube channel promotion bar */}
+        {/* 2. YouTube channel promotion bar (Updated Title & Color) */}
         <div className="w-full py-[6vh] px-[5vw] flex flex-col md:flex-row items-center justify-between gap-[3vh] md:gap-0">
           <div className="flex flex-col md:flex-row items-center gap-[2vw] text-center md:text-left">
             <span className="text-gray-400 text-[3.5vw] md:text-[0.9vw] tracking-[0.15em] uppercase font-bold block">
               WATCH THE LATEST
             </span>
-            <div className="hidden md:block w-[0.2vw] h-[4vh] bg-[#D4AF37]"></div>
+            {/* গোল্ডের বদলে রেড লাইন */}
+            <div className="hidden md:block w-[0.2vw] h-[4vh] bg-red-600"></div>
             <h2 className="text-black text-[5.5vw] md:text-[2.2vw] font-black tracking-tighter uppercase">
-              FINAL CUT MULTIMEDIA&apos;S <span className="text-red-600">YouTube</span> CHANNEL
+              LATEST FROM OUR <span className="text-red-600">CHANNEL</span>
             </h2>
           </div>
           
@@ -105,26 +112,9 @@ export default function ClientAndVlogSection() {
           </a>
         </div>
 
-        {/* 3. YouTube video grid */}
-        <div className="w-full flex flex-col lg:flex-row border-t border-gray-100">
-          
-          {/* VLOG title section */}
-          <div className="w-full lg:w-[20vw] flex flex-row lg:flex-col items-center lg:items-start justify-between lg:justify-center p-[5vw] lg:p-[3vw] gap-[4vh]">
-            <h3 className="text-black text-[8vw] md:text-[5vw] lg:text-[3.5vw] font-black tracking-tight uppercase leading-none">
-              VLOG
-            </h3>
-            <a 
-              href="https://youtube.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border-[0.2vw] border-red-600 text-red-600 font-bold text-[3vw] md:text-[0.9vw] tracking-[0.1em] uppercase px-[4vw] py-[1.5vh] md:px-[2vw] md:py-[1vh] transition-all hover:bg-red-600 hover:text-white text-center"
-            >
-              SUBSCRIBE
-            </a>
-          </div>
-
-          {/* YouTube thumbnails grid */}
-          <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-[3vw] md:gap-[2vw] p-[3vw] lg:p-[2vw] items-center">
+        {/* 3. YouTube video grid (VLOG রিমুভ করা হয়েছে, ৪ কলামের গ্রিড) */}
+        <div className="w-full p-[4vw] bg-gray-50 border-t border-gray-100">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[3vw] md:gap-[2vw]">
             {youtubeVideos.map((video) => (
               <div 
                 key={video.id}
@@ -151,7 +141,6 @@ export default function ClientAndVlogSection() {
               </div>
             ))}
           </div>
-
         </div>
       </div>
 

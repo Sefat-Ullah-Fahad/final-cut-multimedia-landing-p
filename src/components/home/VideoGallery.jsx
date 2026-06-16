@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import Image from "next/image";
 
 export default function VideoGallery() {
   const [selectedVideo, setSelectedVideo] = useState(null);
@@ -9,7 +10,7 @@ export default function VideoGallery() {
   // ডানে-বামে স্ক্রল করার ফাংশন
   const scroll = (direction) => {
     if (scrollContainerRef.current) {
-      const scrollAmount = window.innerWidth * 0.4; // স্ক্রিনের 40vw পরিমাণ স্ক্রল হবে
+      const scrollAmount = window.innerWidth * 0.4;
       scrollContainerRef.current.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
@@ -17,19 +18,92 @@ export default function VideoGallery() {
     }
   };
 
+  // ভিডিও ডেটাতে কাস্টম থাম্বনেইল (উজ্জ্বল এবং ক্যাটাগরি অনুযায়ী) যুক্ত করা হয়েছে
   const videos = [
-    { id: 1, title: "CORPORATE PRODUCTION", location: "CHARLOTTE, NC", url: "https://player.vimeo.com/video/659551134?h=981ca1e9a1" },
-    { id: 2, title: "REAL ESTATE CINEMATIC", location: "LOS ANGELES", url: "https://player.vimeo.com/video/817227760?h=ed3ad73e11" },
-    { id: 3, title: "EVENT HIGHLIGHTS", location: "NEW YORK", url: "https://player.vimeo.com/video/1018999440?h=49e7fc2c6b" },
-    { id: 4, title: "DOCUMENTARY FILM", location: "CHICAGO", url: "https://player.vimeo.com/video/729037812?h=43160bdfed" },
-    { id: 5, title: "BRAND COMMERCIAL", location: "MIAMI", url: "https://player.vimeo.com/video/984427815?h=e0a2925dac" },
-    { id: 6, title: "AERIAL DRONE FOOTAGE", location: "TEXAS", url: "https://player.vimeo.com/video/299711587?h=5e1c36a214" },
-    { id: 7, title: "AUTOMOTIVE PROMO", location: "ATLANTA", url: "https://player.vimeo.com/video/299713372?h=3197039fa5" },
-    { id: 8, title: "LIVE STREAM EVENT", location: "BOSTON", url: "https://player.vimeo.com/video/694443460?h=f04d700711" },
-    { id: 9, title: "SOCIAL MEDIA AD", location: "SEATTLE", url: "https://player.vimeo.com/video/670200023?h=d2d14f91a1" },
-    { id: 10, title: "TRAINING VIDEO", location: "DENVER", url: "https://player.vimeo.com/video/752557257?h=f930cb6852" },
-    { id: 11, title: "INTERVIEW SESSION", location: "AUSTIN", url: "https://player.vimeo.com/video/347653169?h=62ae825ca0" },
-    { id: 12, title: "PRODUCT LAUNCH", location: "DALLAS", url: "https://player.vimeo.com/video/322030118?h=1243cbc3be" },
+    { 
+      id: 1, 
+      title: "CORPORATE PRODUCTION", 
+      location: "CHARLOTTE, NC", 
+      url: "https://player.vimeo.com/video/659551134?h=981ca1e9a1",
+      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2026/06/social-media-profile-management-1024x585.jpeg" // Office
+    },
+    { 
+      id: 2, 
+      title: "REAL ESTATE CINEMATIC", 
+      location: "LOS ANGELES", 
+      url: "https://player.vimeo.com/video/817227760?h=ed3ad73e11",
+      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/professional-video-production-for-car-dealers-1-768x439-1.jpeg" // Bright Property
+    },
+    { 
+      id: 3, 
+      title: "EVENT HIGHLIGHTS", 
+      location: "NEW YORK", 
+      url: "https://player.vimeo.com/video/1018999440?h=49e7fc2c6b",
+      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/a8b00388-72df-4154-ac5b-e469b6968b84.jpeg" // Event Crowd
+    },
+    { 
+      id: 4, 
+      title: "DOCUMENTARY FILM", 
+      location: "CHICAGO", 
+      url: "https://player.vimeo.com/video/729037812?h=43160bdfed",
+      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/Mac-Two-Computers-Display.jpg" // Editing/Setup
+    },
+    { 
+      id: 5, 
+      title: "BRAND COMMERCIAL", 
+      location: "MIAMI", 
+      url: "https://player.vimeo.com/video/984427815?h=e0a2925dac",
+      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/87d2047b-a769-426a-8539-3d0b3f8f7a01-scaled.jpeg" // Auto/Commercial
+    },
+    { 
+      id: 6, 
+      title: "AERIAL DRONE FOOTAGE", 
+      location: "TEXAS", 
+      url: "https://player.vimeo.com/video/299711587?h=5e1c36a214",
+      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/E8D4179E-7B88-4704-900F-A1D83B47BC86-scaled.jpeg" // Drone/Aerial View
+    },
+    { 
+      id: 7, 
+      title: "AUTOMOTIVE PROMO", 
+      location: "ATLANTA", 
+      url: "https://player.vimeo.com/video/299713372?h=3197039fa5",
+      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/openart-image_t8vy9ESm_1760035589171_raw.jpg"
+    },
+    { 
+      id: 8, 
+      title: "LIVE STREAM EVENT", 
+      location: "BOSTON", 
+      url: "https://player.vimeo.com/video/694443460?h=f04d700711",
+      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/IMG_2841-scaled.jpeg"
+    },
+    { 
+      id: 9, 
+      title: "SOCIAL MEDIA AD", 
+      location: "SEATTLE", 
+      url: "https://player.vimeo.com/video/670200023?h=d2d14f91a1",
+      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2026/06/social-media-content-for-real-estate-companies-1024x585.jpeg"
+    },
+    { 
+      id: 10, 
+      title: "TRAINING VIDEO", 
+      location: "DENVER", 
+      url: "https://player.vimeo.com/video/752557257?h=f930cb6852",
+      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/IMG_0540-scaled.jpeg"
+    },
+    { 
+      id: 11, 
+      title: "INTERVIEW SESSION", 
+      location: "AUSTIN", 
+      url: "https://player.vimeo.com/video/347653169?h=62ae825ca0",
+      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/496857656_2510228855980777_2259413147144370187_n.jpg" // Interview Setup
+    },
+    { 
+      id: 12, 
+      title: "PRODUCT LAUNCH", 
+      location: "DALLAS", 
+      url: "https://player.vimeo.com/video/322030118?h=1243cbc3be",
+      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/Untitled-3.jpg"
+    },
   ];
 
   return (
@@ -41,20 +115,21 @@ export default function VideoGallery() {
           Cinematic Experience
         </span>
         <div className="flex items-center gap-[1.5vw] mt-[1vh]">
-          <div className="w-[0.6vw] md:w-[0.2vw] h-[4vh] bg-[#D4AF37]"></div>
+          {/* গোল্ডের পরিবর্তে লাল অ্যাকসেন্ট */}
+          <div className="w-[0.6vw] md:w-[0.2vw] h-[4vh] bg-red-600"></div>
           <h2 className="text-white text-[6vw] md:text-[3vw] font-bold tracking-wide uppercase leading-none">
             Exclusive Productions
           </h2>
         </div>
       </div>
 
-      {/* গ্যালারি স্লাইডার এরিয়া (2-Rows Horizontal Scroll) */}
+      {/* গ্যালারি স্লাইডার এরিয়া */}
       <div className="relative w-full group/slider">
         
         {/* লেফট অ্যারো */}
         <button 
           onClick={() => scroll("left")}
-          className="absolute left-[1vw] top-1/2 -translate-y-1/2 z-30 text-white opacity-0 group-hover/slider:opacity-100 transition-opacity duration-300 bg-black/50 p-[1vw] rounded-full hover:bg-[#D4AF37] hover:text-black"
+          className="absolute left-[1vw] top-1/2 -translate-y-1/2 z-30 text-white opacity-0 group-hover/slider:opacity-100 transition-opacity duration-300 bg-black/50 p-[1vw] rounded-full hover:bg-red-600 hover:text-white"
         >
           <svg className="w-[5vw] h-[5vw] md:w-[2.5vw] md:h-[2.5vw]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 19l-7-7 7-7" />
@@ -64,42 +139,42 @@ export default function VideoGallery() {
         {/* রাইট অ্যারো */}
         <button 
           onClick={() => scroll("right")}
-          className="absolute right-[1vw] top-1/2 -translate-y-1/2 z-30 text-white opacity-0 group-hover/slider:opacity-100 transition-opacity duration-300 bg-black/50 p-[1vw] rounded-full hover:bg-[#D4AF37] hover:text-black"
+          className="absolute right-[1vw] top-1/2 -translate-y-1/2 z-30 text-white opacity-0 group-hover/slider:opacity-100 transition-opacity duration-300 bg-black/50 p-[1vw] rounded-full hover:bg-red-600 hover:text-white"
         >
           <svg className="w-[5vw] h-[5vw] md:w-[2.5vw] md:h-[2.5vw]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 5l7 7-7 7" />
           </svg>
         </button>
 
-        {/* ২-রো (2 Rows) ভিডিও কার্ড কন্টেইনার */}
+        {/* ২-রো ভিডিও কার্ড কন্টেইনার */}
         <div 
           ref={scrollContainerRef}
-          /* auto-cols ব্যবহার করে ২ রো একসাথে স্লাইড করার বাগ ফিক্স করা হয়েছে */
           className="grid grid-rows-1 md:grid-rows-2 grid-flow-col auto-cols-[85vw] md:auto-cols-[40vw] lg:auto-cols-[32vw] gap-[4vw] md:gap-[2vw] px-[5vw] pb-[2vh] overflow-x-auto snap-x snap-mandatory hide-scrollbar scroll-smooth"
         >
           {videos.map((video) => (
             <div 
               key={video.id} 
-              // হাইট 35vh রাখা হয়েছে যাতে ২ রো একসাথে স্ক্রিনে সুন্দরভাবে ফিট হয়
               className="relative w-full h-[35vh] md:h-[35vh] group cursor-pointer overflow-hidden bg-black snap-center flex-shrink-0"
               onClick={() => setSelectedVideo(video.url)}
             >
-              <iframe 
-                src={`${video.url}&background=1&autoplay=0&muted=1`} 
-                className="absolute inset-0 w-full h-full object-cover pointer-events-none opacity-80 group-hover:scale-105 transition-transform duration-[800ms] ease-out"
-                frameBorder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-              ></iframe>
+              {/* iframe এর বদলে কাস্টম ইমেজ থাম্বনেইল */}
+              <Image 
+                src={video.thumbnail} 
+                alt={video.title}
+                fill
+                className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-[800ms] ease-out"
+                unoptimized
+              />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
 
-              {/* স্মুথ অ্যানিমেটেড বর্ডার (আপনার আগের কোডের হুবহু স্টাইল) */}
-              <div className="absolute top-0 left-0 h-[0.5vw] md:h-[0.2vw] w-0 bg-[#D4AF37] transition-all duration-[600ms] ease-in-out group-hover:w-full z-20"></div>
-              <div className="absolute top-0 right-0 w-[0.5vw] md:w-[0.2vw] h-0 bg-[#D4AF37] transition-all duration-[600ms] ease-in-out group-hover:h-full z-20"></div>
-              <div className="absolute bottom-0 right-0 h-[0.5vw] md:h-[0.2vw] w-0 bg-[#D4AF37] transition-all duration-[600ms] ease-in-out group-hover:w-full z-20"></div>
-              <div className="absolute bottom-0 left-0 w-[0.5vw] md:w-[0.2vw] h-0 bg-[#D4AF37] transition-all duration-[600ms] ease-in-out group-hover:h-full z-20"></div>
+              {/* স্মুথ অ্যানিমেটেড বর্ডার (রেড থিম) */}
+              <div className="absolute top-0 left-0 h-[0.5vw] md:h-[0.2vw] w-0 bg-red-600 transition-all duration-[600ms] ease-in-out group-hover:w-full z-20"></div>
+              <div className="absolute top-0 right-0 w-[0.5vw] md:w-[0.2vw] h-0 bg-red-600 transition-all duration-[600ms] ease-in-out group-hover:h-full z-20"></div>
+              <div className="absolute bottom-0 right-0 h-[0.5vw] md:h-[0.2vw] w-0 bg-red-600 transition-all duration-[600ms] ease-in-out group-hover:w-full z-20"></div>
+              <div className="absolute bottom-0 left-0 w-[0.5vw] md:w-[0.2vw] h-0 bg-red-600 transition-all duration-[600ms] ease-in-out group-hover:h-full z-20"></div>
 
-              {/* ডিফল্ট টেক্সট (আপনার আগের কোডের হুবহু স্টাইল) */}
+              {/* ডিফল্ট টেক্সট */}
               <div className="absolute bottom-[3vh] left-[2vw] transition-all duration-[500ms] group-hover:opacity-0 group-hover:translate-y-[2vh]">
                 <h3 className="text-white text-[4vw] md:text-[1.5vw] font-medium uppercase tracking-wider">
                   {video.title}
@@ -109,12 +184,12 @@ export default function VideoGallery() {
                 </p>
               </div>
 
-              {/* হোভার ইফেক্ট (স্মুথ টেক্সট ফেড-ইন, আপনার আগের কোডের হুবহু স্টাইল) */}
+              {/* হোভার ইফেক্ট (স্মুথ টেক্সট ফেড-ইন, রেড থিম) */}
               <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-[600ms] ease-in-out flex flex-col justify-between p-[2vw] z-10">
                 
                 <div className="flex gap-[1vw] items-center translate-y-[2vh] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-[700ms] ease-out delay-[100ms]">
                   <span className="text-white text-[2vw] md:text-[0.8vw] tracking-widest uppercase">FEATURED</span>
-                  <div className="w-[0.2vw] md:w-[0.1vw] h-[2vh] bg-[#D4AF37]"></div>
+                  <div className="w-[0.2vw] md:w-[0.1vw] h-[2vh] bg-red-600"></div>
                   <span className="text-gray-300 text-[2vw] md:text-[0.8vw] tracking-widest uppercase">PRODUCTION</span>
                 </div>
 
@@ -122,12 +197,14 @@ export default function VideoGallery() {
                   <h3 className="text-white text-[5vw] md:text-[2vw] font-bold uppercase leading-tight">
                     {video.title}
                   </h3>
-                  <p className="text-[#D4AF37] text-[3vw] md:text-[0.9vw] mt-[1vh] font-medium tracking-wider">
+                  {/* লোকেশন টেক্সট গোল্ডের বদলে রেড */}
+                  <p className="text-red-500 text-[3vw] md:text-[0.9vw] mt-[1vh] font-medium tracking-wider">
                     {video.location}
                   </p>
                 </div>
 
-                <div className="bg-[#D4AF37] self-end px-[3vw] py-[1.5vh] md:px-[1.5vw] md:py-[1vh] text-black text-[2.5vw] md:text-[0.7vw] font-bold tracking-[0.2em] uppercase hover:bg-white transition-colors translate-y-[2vh] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 duration-[700ms] ease-out delay-[300ms]">
+                {/* রেড বাটন */}
+                <div className="bg-red-600 text-white self-end px-[3vw] py-[1.5vh] md:px-[1.5vw] md:py-[1vh] text-[2.5vw] md:text-[0.7vw] font-bold tracking-[0.2em] uppercase hover:bg-white hover:text-red-600 transition-colors translate-y-[2vh] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 duration-[700ms] ease-out delay-[300ms]">
                   WATCH VIDEO
                 </div>
               </div>
@@ -136,12 +213,12 @@ export default function VideoGallery() {
         </div>
       </div>
 
-      {/* ভিডিও প্লেয়ার Modal */}
+      {/* ভিডিও প্লেয়ার Modal (রেড থিম) */}
       {selectedVideo && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-md transition-opacity duration-300">
           <button 
             onClick={() => setSelectedVideo(null)}
-            className="absolute top-[5vh] right-[5vw] text-white hover:text-[#D4AF37] transition-colors flex items-center gap-[1vw]"
+            className="absolute top-[5vh] right-[5vw] text-white hover:text-red-500 transition-colors flex items-center gap-[1vw]"
           >
             <span className="text-[3.5vw] md:text-[1vw] uppercase tracking-widest">Close</span>
             <svg className="w-[8vw] h-[8vw] md:w-[3vw] md:h-[3vw]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -149,7 +226,7 @@ export default function VideoGallery() {
             </svg>
           </button>
 
-          <div className="w-[95vw] h-[35vh] md:w-[75vw] md:h-[75vh] border-[0.2vw] border-[#D4AF37] bg-black relative shadow-2xl">
+          <div className="w-[95vw] h-[35vh] md:w-[75vw] md:h-[75vh] border-[0.2vw] border-red-600 bg-black relative shadow-2xl">
             <iframe 
               src={`${selectedVideo}&autoplay=1`} 
               className="absolute inset-0 w-full h-full"

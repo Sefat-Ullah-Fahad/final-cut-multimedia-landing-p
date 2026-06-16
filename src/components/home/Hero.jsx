@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full h-screen overflow-hidden flex items-center justify-center">
+    <section className="relative w-full h-[100vh] overflow-hidden flex items-center justify-center">
       
       {/* ব্যাকগ্রাউন্ড ভিডিও */}
       <div className="absolute inset-0 w-full h-full z-0">
@@ -21,35 +21,57 @@ export default function HeroSection() {
         </video>
         
         {/* ভিডিওর উপর একটি হালকা কালো ওভারলে, যাতে টেক্সট স্পষ্ট বোঝা যায় */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/60"></div>
       </div>
 
       {/* হিরো কন্টেন্ট */}
-      <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 w-full max-w-[90%] mx-auto mt-16 md:mt-0">
+      <div className="relative z-10 flex flex-col items-center justify-center text-center px-[5vw] w-full max-w-[90vw] md:max-w-[80vw] mx-auto">
         
-        {/* মেইন টাইটেল */}
-        <h1 className="text-white font-bold tracking-wider uppercase mb-8 md:mb-10
-                       text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[7.4vh] leading-tight">
-          FINAL CUT MULTIMEDIA.
+        {/* মেইন টাইটেল (ক্লায়েন্টের নতুন টেক্সট) */}
+        <h1 className="text-white font-black tracking-tight mb-[3vh] text-[8vw] md:text-[4vw] leading-[1.1] drop-shadow-lg">
+          Professional Video Production <br className="hidden md:block" />
+          That Helps Your Business <span className="text-red-600">Stand Out</span>
         </h1>
 
-        {/* প্রিমিয়াম বাটন (পিক্সেল বা rem প্যাডিং ছাড়া, সম্পূর্ণ vh/vw ভিত্তিক) */}
-        <Link 
-          href="#our-work" 
-          className="group relative inline-flex items-center justify-center 
-                     w-[75vw] sm:w-[40vw] md:w-[30vw] lg:w-[22vw] xl:w-[18vw]
-                     h-[7vh] sm:h-[8vh] md:h-[6vh]
-                     border border-white text-white text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase 
-                     transition-all duration-500 ease-out overflow-hidden"
-        >
-          {/* বাটনের ভেতরের টেক্সট */}
-          <span className="relative z-10 transition-colors duration-500 group-hover:text-black">
-            VIEW OUR EXCLUSIVE WORK
-          </span>
+        {/* সাব-হেডলাইন */}
+        <p className="text-gray-300 font-medium mb-[6vh] text-[4vw] md:text-[1.2vw] max-w-[90vw] md:max-w-[60vw] leading-relaxed drop-shadow-md">
+          We craft cinematic visuals and compelling stories that capture attention, build trust, and drive real results for your brand.
+        </p>
+
+        {/* বাটন গ্রুপ */}
+        <div className="flex flex-col md:flex-row gap-[4vw] md:gap-[2vw]">
           
-          {/* হোভার ব্যাকগ্রাউন্ড অ্যানিমেশন */}
-          <div className="absolute inset-0 bg-[#D4AF37] translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-0"></div>
-        </Link>
+          {/* Request A Quote বাটন (Primary - Red) */}
+          <Link 
+            href="#booking-link" 
+            className="group relative inline-flex items-center justify-center 
+                       w-[80vw] md:w-[22vw] h-[8vh] md:h-[7vh]
+                       border-[0.2vw] md:border-[0.1vw] border-red-600 bg-red-600 
+                       text-white text-[3.5vw] md:text-[0.9vw] font-bold tracking-[0.15em] uppercase 
+                       transition-all duration-500 ease-out overflow-hidden shadow-lg"
+          >
+            <span className="relative z-10 transition-colors duration-500 group-hover:text-red-600">
+              REQUEST A QUOTE
+            </span>
+            <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-0"></div>
+          </Link>
+          
+          {/* View Our Work বাটন (Secondary - Outline) */}
+          <Link 
+            href="#our-work" 
+            className="group relative inline-flex items-center justify-center 
+                       w-[80vw] md:w-[22vw] h-[8vh] md:h-[7vh]
+                       border-[0.2vw] md:border-[0.1vw] border-white 
+                       text-white text-[3.5vw] md:text-[0.9vw] font-bold tracking-[0.15em] uppercase 
+                       transition-all duration-500 ease-out overflow-hidden"
+          >
+            <span className="relative z-10 transition-colors duration-500 group-hover:text-black">
+              VIEW OUR WORK
+            </span>
+            <div className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-in-out z-0"></div>
+          </Link>
+
+        </div>
         
       </div>
     </section>

@@ -94,18 +94,17 @@ export default function Header() {
               />
             </div>
             
-            <div className="flex flex-col justify-center w-[85px] md:w-[90px]">
-              <span className="text-white text-base md:text-lg font-bold leading-none tracking-wide">
-                FINAL CUT
-              </span>
-              <span className="text-white text-[9px] md:text-[10px] tracking-[0.2em] leading-none mt-1">
-                MULTIMEDIA
-              </span>
-            </div>
+           <div className="flex flex-col justify-center">
+  <span className="text-white text-base md:text-lg font-bold leading-none tracking-wide whitespace-nowrap">
+    FINAL CUT
+  </span>
+  <span className="text-white text-[9px] md:text-[10px] tracking-[0.2em] leading-none mt-1 whitespace-nowrap">
+    MULTIMEDIA
+  </span>
+</div>
           </Link>
 
-          {/* ডেস্কটপ নেভিগেশন */}
-       {/* ডেস্কটপ নেভিগেশন */}
+    
           <nav className="hidden xl:flex items-center gap-5 2xl:gap-7">
             {menuItems.map((item, index) => (
               <div key={index} className="relative group py-4">
