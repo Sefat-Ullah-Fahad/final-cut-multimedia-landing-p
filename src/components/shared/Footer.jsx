@@ -39,17 +39,7 @@ export default function Footer() {
       <div className="relative z-10 w-full max-w-[90vw] mx-auto flex flex-col">
         
         {/* ক্লায়েন্টের প্রাক-ফুটার (Pre-footer) টেক্সট */}
-        <div className="mb-[10vh] border-b-[0.1vw] border-white/10 pb-[6vh]">
-          <span className="text-[#D4AF37] text-[3vw] md:text-[0.8vw] tracking-[0.2em] uppercase font-bold block mb-[1vh]">
-            CORPORATE VIDEO PRODUCTION
-          </span>
-          <h2 className="text-white text-[6vw] md:text-[2.5vw] font-black uppercase tracking-wide mb-[2vh]">
-            LET&apos;S BRING YOUR VISION TO LIFE
-          </h2>
-          <p className="text-gray-400 text-[3.5vw] md:text-[1vw] max-w-[100vw] md:max-w-[60vw] leading-relaxed">
-            Have an idea for a video, event, or photoshoot? At Final Cut Multimedia, we&apos;re here to turn your vision into reality with creative storytelling and professional production. Whether it&apos;s corporate events, social media content, or training videos, we&apos;re just one message away.
-          </p>
-        </div>
+       
 
         {/* ৪-কলাম ফুটার গ্রিড */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-[8vw] md:gap-[4vw] mb-[8vh]">

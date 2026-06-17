@@ -23,7 +23,7 @@ export default function ContactSection() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] to-transparent"></div>
         </div>
 
-        {/* CTA কন্টেন্ট কন্টেইনার (ফর্মের বদলে নতুন ডিজাইন) */}
+        {/* CTA কন্টেন্ট কন্টেইনার */}
         <div className="relative z-10 w-full max-w-[90vw] md:max-w-[60vw] flex flex-col items-center text-center">
           
           {/* সাব-হেডার */}
@@ -39,25 +39,18 @@ export default function ContactSection() {
             </h2>
           </div>
 
-          {/* শর্ট ডেসক্রিপশন */}
+          {/* শর্ট ডেসক্রিপশন (Request a quote কথাটি রিমুভ করা হয়েছে) */}
           <p className="text-gray-300 text-[4vw] md:text-[1.1vw] max-w-[85vw] md:max-w-[45vw] leading-relaxed mb-[6vh]">
-            Let&apos;s discuss your next big project. Book a call or request a quote today, and let our creative experts handle the rest.
+            Let&apos;s discuss your next big project. Book a call today, and let our creative experts handle the rest.
           </p>
 
-          {/* বুকিং বাটন (ক্লায়েন্টের বুকিং লিংক এখানে বসবে) */}
-          <div className="flex flex-col md:flex-row gap-[4vw] md:gap-[2vw]">
+          {/* বুকিং বাটন (শুধুমাত্র Book a Call রাখা হয়েছে) */}
+          <div className="flex justify-center">
             <Link 
               href="#booking-link" 
               className="bg-red-600 border-[0.2vw] md:border-[0.1vw] border-red-600 text-white font-bold text-[3.5vw] md:text-[1vw] tracking-[0.15em] uppercase px-[10vw] py-[2vh] md:px-[4vw] md:py-[1.5vh] hover:bg-transparent hover:text-red-500 transition-all duration-300"
             >
               BOOK A CALL
-            </Link>
-            
-            <Link 
-              href="#quote-link" 
-              className="bg-transparent border-[0.2vw] md:border-[0.1vw] border-white text-white font-bold text-[3.5vw] md:text-[1vw] tracking-[0.15em] uppercase px-[10vw] py-[2vh] md:px-[4vw] md:py-[1.5vh] hover:bg-white hover:text-black transition-all duration-300"
-            >
-              REQUEST A QUOTE
             </Link>
           </div>
 

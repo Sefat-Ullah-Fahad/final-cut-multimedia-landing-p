@@ -26,22 +26,20 @@ export default function AboutSection() {
           </span>
           
           <div className="flex items-center gap-[1.5vw] mt-[2vh] mb-[5vh] md:mb-[6vh]">
-            <div className="w-[0.8vw] md:w-[0.2vw] h-[5vh] bg-[#D4AF37]"></div>
+            {/* সোনালী লাইনের বদলে লাল লাইন */}
+            <div className="w-[0.8vw] md:w-[0.2vw] h-[5vh] bg-red-600"></div>
             <h2 className="text-white text-[8vw] md:text-[4vw] xl:text-[3.5vw] font-bold tracking-wide uppercase leading-tight">
               Final Cut <br className="hidden lg:block xl:hidden" /> Multimedia
             </h2>
           </div>
 
-          {/* প্যারাগ্রাফ টেক্সট (ক্লায়েন্টের রিকোয়ারমেন্ট অনুযায়ী শর্ট করা হয়েছে) */}
+          {/* প্যারাগ্রাফ টেক্সট (ক্লায়েন্টের নতুন রিকোয়ারমেন্ট অনুযায়ী) */}
           <div className="space-y-[3vh] text-[#A0A0A0] text-[4vw] md:text-[1.1vw] leading-relaxed font-light pr-0 xl:pr-[3vw]">
             <p>
-              <strong className="text-white font-medium">Who We Are & What We Do:</strong> We are a premier video production and photography agency specializing in crafting cinematic visuals and compelling brand stories.
+              Final Cut Multimedia is a Charlotte based video production agency helping businesses, brands, and organizations create professional video content that supports real business goals. We specialize in corporate videos, commercials, event coverage, customer testimonials, training videos, and brand storytelling that engage audiences and elevate brands.
             </p>
             <p>
-              <strong className="text-white font-medium">Who We Help:</strong> We partner with businesses, corporate clients, and brands in Charlotte, NC, and beyond to help them stand out in a crowded digital landscape.
-            </p>
-            <p>
-              <strong className="text-white font-medium">Why We&apos;re Different:</strong> What sets us apart is our relentless commitment to high-quality storytelling, seamless production, and delivering measurable results that truly connect with your audience.
+              With more than 10 years of experience, we combine cinematic visuals, strategic storytelling, and a seamless production process to deliver content that looks exceptional and drives results. From planning and filming to editing and final delivery, our focus is on creating videos that help businesses stand out and make a lasting impact.
             </p>
           </div>
 
@@ -60,12 +58,13 @@ export default function AboutSection() {
       </div>
 
       {/* ডান পাশ: ক্লায়েন্টের ছবি */}
-      <div className="relative w-full lg:w-1/2 h-[50vh] lg:h-auto lg:min-h-screen">
+      <div className="relative w-full lg:w-1/2 h-[50vh] lg:h-auto lg:min-h-screen bg-black/5"> 
+        {/* bg-black/5 দেওয়া হয়েছে যাতে ইমেজ ছোট হলে ব্যাকগ্রাউন্ড খালি না লাগে */}
         <Image
-          src="https://finalcutmultimedia.com/wp-content/uploads/2025/10/488528975_2472962053040791_5356663683752375839_n.jpg"
+          src="https://res.cloudinary.com/dsga4gyw9/image/upload/v1781697016/Use_this_picture_k9euqa.jpg"
           alt="Final Cut Multimedia Team"
           fill
-          className="object-cover object-center"
+          className="object-contain object-center"
           priority
           unoptimized
         />

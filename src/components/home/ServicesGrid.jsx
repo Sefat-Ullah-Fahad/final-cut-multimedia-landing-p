@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function ServicesGrid() {
-  // ১. ক্লায়েন্টের Dubsado লিস্ট অনুযায়ী ৫টি সার্ভিস এবং তাদের ডেসক্রিপশন
+  // ১. ক্লায়েন্টের Dubsado লিস্ট অনুযায়ী ৫টি সার্ভিস এবং তাদের ডেসক্রিপশন
   const services = [
     {
       id: 1,
@@ -40,10 +40,11 @@ export default function ServicesGrid() {
     },
     {
       id: 5,
-      subtitle: "INSTRUCTIONAL",
-      title: "SAFETY & TRAINING VIDEOS",
-      desc: "Clear, instructional productions that simplify learning and promote workplace safety.",
-      image: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/a8b00388-72df-4154-ac5b-e469b6968b84.jpeg",
+      // ক্লায়েন্টের নির্দেশ অনুযায়ী ৫ নম্বর সার্ভিস আপডেট করা হয়েছে
+      subtitle: "MEMORABLE",
+      title: "EVENT COVERAGE",
+      desc: "High-quality video and photo coverage for corporate events, conferences, and live shows.",
+      image: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/IMG_2841-scaled.jpeg",
       link: "#",
     },
   ];
@@ -86,7 +87,7 @@ export default function ServicesGrid() {
           <Link 
             href={item.link} 
             key={item.id} 
-            // ৫ নম্বর কার্ডটি (index 4) ডেস্কটপে ২ কলাম জায়গা নিবে
+            // ৫ নম্বর কার্ডটি (index 4) ডেস্কটপে ২ কলাম জায়গা নিবে
             className={`relative w-full h-[40vh] md:h-[50vh] group block overflow-hidden bg-black ${index === 4 ? 'md:col-span-2' : ''}`}
           >
             {/* ব্যাকগ্রাউন্ড ইমেজ */}

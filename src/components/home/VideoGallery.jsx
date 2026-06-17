@@ -18,49 +18,49 @@ export default function VideoGallery() {
     }
   };
 
-  // ভিডিও ডেটাতে কাস্টম থাম্বনেইল (উজ্জ্বল এবং ক্যাটাগরি অনুযায়ী) যুক্ত করা হয়েছে
+  // ভিডিও ডেটাতে কাস্টম থাম্বনেইল
   const videos = [
     { 
       id: 1, 
       title: "CORPORATE PRODUCTION", 
       location: "CHARLOTTE, NC", 
       url: "https://player.vimeo.com/video/659551134?h=981ca1e9a1",
-      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2026/06/social-media-profile-management-1024x585.jpeg" // Office
+      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2026/06/social-media-profile-management-1024x585.jpeg"
     },
     { 
       id: 2, 
       title: "REAL ESTATE CINEMATIC", 
       location: "LOS ANGELES", 
       url: "https://player.vimeo.com/video/817227760?h=ed3ad73e11",
-      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/professional-video-production-for-car-dealers-1-768x439-1.jpeg" // Bright Property
+      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/professional-video-production-for-car-dealers-1-768x439-1.jpeg"
     },
     { 
       id: 3, 
       title: "EVENT HIGHLIGHTS", 
       location: "NEW YORK", 
       url: "https://player.vimeo.com/video/1018999440?h=49e7fc2c6b",
-      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/a8b00388-72df-4154-ac5b-e469b6968b84.jpeg" // Event Crowd
+      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/a8b00388-72df-4154-ac5b-e469b6968b84.jpeg"
     },
     { 
       id: 4, 
       title: "DOCUMENTARY FILM", 
       location: "CHICAGO", 
       url: "https://player.vimeo.com/video/729037812?h=43160bdfed",
-      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/Mac-Two-Computers-Display.jpg" // Editing/Setup
+      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/Mac-Two-Computers-Display.jpg"
     },
     { 
       id: 5, 
       title: "BRAND COMMERCIAL", 
       location: "MIAMI", 
       url: "https://player.vimeo.com/video/984427815?h=e0a2925dac",
-      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/87d2047b-a769-426a-8539-3d0b3f8f7a01-scaled.jpeg" // Auto/Commercial
+      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/87d2047b-a769-426a-8539-3d0b3f8f7a01-scaled.jpeg"
     },
     { 
       id: 6, 
       title: "AERIAL DRONE FOOTAGE", 
       location: "TEXAS", 
       url: "https://player.vimeo.com/video/299711587?h=5e1c36a214",
-      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/E8D4179E-7B88-4704-900F-A1D83B47BC86-scaled.jpeg" // Drone/Aerial View
+      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/E8D4179E-7B88-4704-900F-A1D83B47BC86-scaled.jpeg"
     },
     { 
       id: 7, 
@@ -95,7 +95,7 @@ export default function VideoGallery() {
       title: "INTERVIEW SESSION", 
       location: "AUSTIN", 
       url: "https://player.vimeo.com/video/347653169?h=62ae825ca0",
-      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/496857656_2510228855980777_2259413147144370187_n.jpg" // Interview Setup
+      thumbnail: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/496857656_2510228855980777_2259413147144370187_n.jpg"
     },
     { 
       id: 12, 
@@ -115,10 +115,11 @@ export default function VideoGallery() {
           Cinematic Experience
         </span>
         <div className="flex items-center gap-[1.5vw] mt-[1vh]">
-          {/* গোল্ডের পরিবর্তে লাল অ্যাকসেন্ট */}
+          {/* লাল অ্যাকসেন্ট */}
           <div className="w-[0.6vw] md:w-[0.2vw] h-[4vh] bg-red-600"></div>
+          {/* EXCLUSIVE পরিবর্তন করে FEATURED করা হয়েছে */}
           <h2 className="text-white text-[6vw] md:text-[3vw] font-bold tracking-wide uppercase leading-none">
-            Exclusive Productions
+            FEATURED PRODUCTIONS
           </h2>
         </div>
       </div>
@@ -157,7 +158,6 @@ export default function VideoGallery() {
               className="relative w-full h-[35vh] md:h-[35vh] group cursor-pointer overflow-hidden bg-black snap-center flex-shrink-0"
               onClick={() => setSelectedVideo(video.url)}
             >
-              {/* iframe এর বদলে কাস্টম ইমেজ থাম্বনেইল */}
               <Image 
                 src={video.thumbnail} 
                 alt={video.title}
@@ -197,13 +197,11 @@ export default function VideoGallery() {
                   <h3 className="text-white text-[5vw] md:text-[2vw] font-bold uppercase leading-tight">
                     {video.title}
                   </h3>
-                  {/* লোকেশন টেক্সট গোল্ডের বদলে রেড */}
                   <p className="text-red-500 text-[3vw] md:text-[0.9vw] mt-[1vh] font-medium tracking-wider">
                     {video.location}
                   </p>
                 </div>
 
-                {/* রেড বাটন */}
                 <div className="bg-red-600 text-white self-end px-[3vw] py-[1.5vh] md:px-[1.5vw] md:py-[1vh] text-[2.5vw] md:text-[0.7vw] font-bold tracking-[0.2em] uppercase hover:bg-white hover:text-red-600 transition-colors translate-y-[2vh] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 duration-[700ms] ease-out delay-[300ms]">
                   WATCH VIDEO
                 </div>
@@ -213,7 +211,7 @@ export default function VideoGallery() {
         </div>
       </div>
 
-      {/* ভিডিও প্লেয়ার Modal (রেড থিম) */}
+      {/* ভিডিও প্লেয়ার Modal */}
       {selectedVideo && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-md transition-opacity duration-300">
           <button 
