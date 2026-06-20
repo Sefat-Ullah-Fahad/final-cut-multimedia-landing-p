@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
           {/* আপনার shared ফোল্ডারের হেডার */}
           <Header />
           
-          {/* মূল কন্টেন্ট এরিয়া */}
+          
           <main className="flex-grow">
             {children}
           </main>
