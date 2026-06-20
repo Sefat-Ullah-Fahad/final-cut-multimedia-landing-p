@@ -1,51 +1,42 @@
-import AboutSection from "@/components/home/About";
-import ClientMarquee from "@/components/home/ClientMarquee"; // ഇതിൽ YouTube + Client Logos আছে
-import ContactSection from "@/components/home/ContactSection";
 import HeroSection from "@/components/home/Hero";
-import ProcessSection from "@/components/home/ProcessSection";
-import RecentPostsSection from "@/components/home/RecentPost";
-import ServicesGrid from "@/components/home/ServicesGrid";
-import SocialGallery from "@/components/home/SocialGallery";
-import StatsCounter from "@/components/home/StatsCounter";
-import TestimonialSection from "@/components/home/TestimonialSection";
-import VideoGallery from "@/components/home/VideoGallery";
-import Image from "next/image";
+import AboutSection from "@/components/home/About";
+import StatsCounter from "@/components/home/StatsCounter"; 
+import VideoGallery from "@/components/home/VideoGallery"; 
+import ServicesGrid from "@/components/home/ServicesGrid"; 
+import ClientMarquee from "@/components/home/ClientMarquee"; // সতর্কতা: শুধু লোগো থাকবে, ইউটিউব নয়
+import TestimonialSection from "@/components/home/TestimonialSection"; 
+import ProcessSection from "@/components/home/ProcessSection"; 
+import ContactSection from "@/components/home/ContactSection";
 
 export default function Home() {
   return (
     <main>
-      {/* 1. Hero */}
-      <HeroSection></HeroSection>
+      {/* 1. Hero (Done) */}
+      <HeroSection />
       
-      {/* 2. About */}
-      <AboutSection></AboutSection>
+      {/* 2. About & Credibility (Done) */}
+      <AboutSection />
       
-      {/* 3. Exclusive Productions */}
-      <VideoGallery></VideoGallery>
+      {/* 3. Why Work With Us / Trust Elements */}
+      <StatsCounter />
       
-      {/* 4. Why Work With Us */}
-      <StatsCounter></StatsCounter>
+      {/* 4. Featured Productions (Done - 1st CTA added inside) */}
+      <VideoGallery />
       
-      {/* 5. Services */}
-      <ServicesGrid></ServicesGrid>
+      {/* 5. Services & Industries Served (Done) */}
+      <ServicesGrid />
       
-      {/* 6. Client Testimonials (নতুন সেকশন) */}
-      <TestimonialSection></TestimonialSection>
+      {/* 6. Client Logos (Trust Element - YouTube Removed) */}
+      <ClientMarquee />
       
-      {/* 7. Process / How It Works (নতুন সেকশন) */}
-      <ProcessSection></ProcessSection>
+      {/* 7. Client Testimonials (Next step: add 2nd CTA inside or after this) */}
+      <TestimonialSection />
       
-      {/* 8. Latest From Our Channel (YouTube & Clients) */}
-      <ClientMarquee></ClientMarquee>
+      {/* 8. Process / How It Works (Next step: integrate Jane's unedited photos here) */}
+      <ProcessSection />
       
-      {/* 9. Social / Instagram Feed (ক্লায়েন্টের নির্দেশ অনুযায়ী ব্লগের উপরে আনা হয়েছে) */}
-      <SocialGallery></SocialGallery>
-      
-      {/* 10. Blogs (Social এর নিচে নামানো হয়েছে) */}
-      <RecentPostsSection></RecentPostsSection>
-      
-      {/* 11. Get In Touch (Contact) */}
-      <ContactSection></ContactSection>
+      {/* 9. Contact / Inquiry Form */}
+      <ContactSection />
     </main>
   );
 }

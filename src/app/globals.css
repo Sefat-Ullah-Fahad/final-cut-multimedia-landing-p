@@ -2,7 +2,6 @@
 
 
 
-/* Tailwind v4 কাস্টম থিমিং (আলাদা config ফাইল ছাড়া) */
 @theme {
   --color-dark-bg: #0A0A0A;
   --color-dark-card: #121212;

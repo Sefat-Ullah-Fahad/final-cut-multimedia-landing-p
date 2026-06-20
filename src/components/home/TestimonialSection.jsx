@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import { FiArrowRight } from "react-icons/fi"; // CTA বাটনের জন্য আইকন
 
 export default function TestimonialSection() {
-  // স্ক্রিনশট থেকে নেওয়া গুগল রিভিউয়ের ডেটা
+  // স্ক্রিনশট থেকে নেওয়া গুগল রিভিউয়ের ডেটা
   const reviews = [
     {
       id: 1,
@@ -30,9 +30,9 @@ export default function TestimonialSection() {
   ];
 
   return (
-    <section className="relative w-full bg-[#0A0A0A] py-[12vh] px-[5vw] overflow-hidden">
+    <section id="testimonials" className="relative w-full bg-[#0A0A0A] py-[12vh] px-[5vw] overflow-hidden">
       
-      {/* ব্যাকগ্রাউন্ড ওয়াটারমার্ক (ঐচ্ছিক, প্রিমিয়াম ফিল দেওয়ার জন্য) */}
+      {/* ব্যাকগ্রাউন্ড ওয়াটারমার্ক (vw ব্যবহার করা হয়েছে যাতে স্ক্রিনের অনুপাতে বড়/ছোট হয়) */}
       <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-red-600/5 rounded-full blur-[10vw] pointer-events-none -translate-y-1/2 translate-x-1/4"></div>
 
       <div className="relative z-10 w-full flex flex-col items-center">
@@ -50,8 +50,8 @@ export default function TestimonialSection() {
           </div>
         </div>
 
-        {/* গুগল রেটিং সামারি (4.9 Stars - 114 Reviews) */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-[3vw] md:gap-[1.5vw] mb-[8vh] bg-[#111] border border-white/10 py-[2vh] px-[5vw] md:px-[3vw] rounded-[1vw]">
+        {/* গুগল রেটিং সামারি */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-[3vw] md:gap-[1.5vw] mb-[8vh] bg-[#111] border border-white/10 py-[2vh] px-[5vw] md:px-[3vw] rounded-[1vw] shadow-lg">
           <div className="flex items-center gap-[2vw] md:gap-[1vw]">
             <span className="text-white text-[6vw] md:text-[2.5vw] font-bold">4.9</span>
             <div className="flex gap-[0.5vw]">
@@ -69,17 +69,17 @@ export default function TestimonialSection() {
           </span>
         </div>
 
-        {/* ৩-কলাম রিভিউ কার্ড গ্রিড */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[4vw] md:gap-[2vw] w-full mb-[6vh]">
+        {/* ৩-কলাম রিভিউ কার্ড গ্রিড (Full Width) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-[4vw] md:gap-[2vw] w-full mb-[8vh]">
           {reviews.map((review) => (
             <div 
               key={review.id} 
-              className="group relative flex flex-col bg-[#111] p-[6vw] md:p-[2.5vw] border-[0.2vw] md:border-[0.1vw] border-white/5 hover:border-red-600 transition-colors duration-500"
+              className="group relative flex flex-col bg-[#111] p-[6vw] md:p-[2.5vw] border-[0.2vw] md:border-[0.1vw] border-white/5 hover:border-red-600 hover:shadow-[0_0_1.5vw_rgba(220,38,38,0.2)] transition-all duration-500 rounded-[1vw]"
             >
               {/* ইউজারের ইনফো এবং গুগল আইকন */}
               <div className="flex items-start justify-between mb-[3vh]">
                 <div className="flex items-center gap-[3vw] md:gap-[1vw]">
-                  {/* নামের প্রথম অক্ষর দিয়ে অবতার */}
+                  {/* নামের প্রথম অক্ষর দিয়ে অবতার */}
                   <div className="w-[12vw] h-[12vw] md:w-[3.5vw] md:h-[3.5vw] rounded-full bg-red-600/20 text-red-500 flex items-center justify-center font-bold text-[5vw] md:text-[1.5vw]">
                     {review.name.charAt(0)}
                   </div>
@@ -118,13 +118,16 @@ export default function TestimonialSection() {
           ))}
         </div>
 
-        {/* View All Reviews Button */}
+        {/* 2nd CTA Button - Exit point রিমুভ করে লিড জেনারেশনের জন্য CTA দেওয়া হয়েছে */}
         <Link 
-          href="https://www.google.com/search?q=final+cut+multimedia&sca_esv=ec2bff8bd1e2ef21&sxsrf=ANbL-n43SBlqnnkBrRLYrYKkgZ25D_-aQg:1781609540481&source=lnms&fbs=ADc_l-aN0CWEZBOHjofHoaMMDiKpaEWjvZ2Py1XXV8d8KvlI3vWUtYx0DZdicpfE1faGYenqWn-q4MFiFFtvJjTKeAVxBf9XF8ByrMpEedseJb6C24e7QdJQdIE3TPpl5mEwf0HZUp1chSl04q3NzUG-sivE9fh2upv_LUl1i41J2OLX0ntDV3FbKmN59pJf5BBarEFT9msi8Zx3tjpgPrbRkWHc8AvYww&sa=X&ved=2ahUKEwjjrafe1IuVAxV0ZWwGHULPNsgQ0pQJegQIAxAF&biw=1920&bih=945&dpr=1#lrd=0x8856a5121da75177:0x7a24b14224e384b,1,,,," // এখানে ক্লায়েন্টের আসল গুগল রিভিউ পেজের লিংক বসবে
-          target="_blank"
-          className="bg-transparent border-[0.2vw] md:border-[0.1vw] border-white text-white font-bold text-[3vw] md:text-[0.9vw] tracking-[0.15em] uppercase px-[6vw] py-[1.5vh] md:px-[3vw] md:py-[1.5vh] hover:bg-white hover:text-black transition-all duration-300"
+          href="#contact-us" 
+          className="group inline-flex items-center justify-center gap-[1vw] 
+                     w-full sm:w-auto px-[6vw] py-[2vh] md:px-[3vw] md:py-[1.5vh]
+                     bg-red-600 text-white text-[3.5vw] md:text-[0.9vw] font-semibold tracking-[0.15em] uppercase 
+                     transition-all duration-300 hover:bg-red-700 hover:shadow-[0_0_1.5vw_rgba(220,38,38,0.4)]"
         >
-          READ ALL GOOGLE REVIEWS
+          START YOUR PROJECT TODAY
+          <FiArrowRight className="text-[4vw] md:text-[1.2vw] transition-transform duration-300 group-hover:translate-x-[0.5vw]" />
         </Link>
 
       </div>
