@@ -59,16 +59,17 @@ export default function AboutSection() {
       </div>
 
       {/* ডান পাশ: ক্লায়েন্টের ছবি */}
-      <div className="relative w-full lg:w-1/2 h-[50vh] sm:h-[60vh] lg:h-auto lg:min-h-screen bg-gray-100"> 
-        {/* ইমেজের উপর ব্লেন্ডিং/গ্রেডিয়েন্ট ইফেক্ট (লাইট থিমের জন্য সাদা গ্রেডিয়েন্ট) */}
-        <div className="absolute inset-0 bg-gradient-to-t from-white/90 to-transparent z-10 lg:hidden"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/50 to-transparent z-10 hidden lg:block w-1/3"></div>
+      <div className="relative w-full lg:w-1/2 h-[50vh] sm:h-[60vh] lg:h-auto lg:min-h-screen bg-white"> 
+        
+        {/* ইমেজের উপর ব্লেন্ডিং/গ্রেডিয়েন্ট ইফেক্ট (সাদা শ্যাডো কমানো হয়েছে) */}
+        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white/30 to-transparent z-10 lg:hidden"></div>
+        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white/30 to-transparent z-10 hidden lg:block"></div>
         
         <Image
           src="https://res.cloudinary.com/dsga4gyw9/image/upload/v1781697016/Use_this_picture_k9euqa.jpg"
           alt="Final Cut Multimedia Team"
           fill
-          className="object-cover object-center"
+          className="object-contain object-center" 
           priority
           unoptimized
         />
