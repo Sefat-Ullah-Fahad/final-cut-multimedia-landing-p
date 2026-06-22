@@ -37,17 +37,17 @@ export default function VideoGallery() {
   ];
 
   return (
-    <section className="relative w-full bg-[#0A0A0A] py-16 md:py-24 overflow-hidden">
+    <section className="relative w-full bg-[#fff] py-16 md:py-24 overflow-hidden">
       
       {/* হেডার সেকশন */}
       <div className="flex flex-col px-6 md:px-12 xl:px-20 mb-10">
-        <span className="text-gray-400 text-sm md:text-base tracking-[0.2em] uppercase font-medium">
+        <span className="text-black text-sm md:text-base tracking-[0.2em] uppercase font-medium">
           Cinematic Experience
         </span>
         <div className="flex items-center gap-4 mt-2">
           {/* লাল অ্যাকসেন্ট */}
           <div className="w-1.5 md:w-2 h-10 md:h-12 bg-red-600"></div>
-          <h2 className="text-white text-3xl md:text-5xl lg:text-6xl font-bold tracking-wide uppercase leading-none">
+          <h2 className="text-black text-3xl md:text-5xl lg:text-6xl font-bold tracking-wide uppercase leading-none">
             FEATURED PRODUCTIONS
           </h2>
         </div>

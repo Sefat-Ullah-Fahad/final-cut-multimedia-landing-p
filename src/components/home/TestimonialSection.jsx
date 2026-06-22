@@ -30,7 +30,7 @@ export default function TestimonialSection() {
   ];
 
   return (
-    <section id="testimonials" className="relative w-full bg-[#0A0A0A] py-[12vh] px-[5vw] overflow-hidden">
+    <section id="testimonials" className="relative w-full bg-white py-[12vh] px-[5vw] overflow-hidden">
       
       {/* ব্যাকগ্রাউন্ড ওয়াটারমার্ক (vw ব্যবহার করা হয়েছে যাতে স্ক্রিনের অনুপাতে বড়/ছোট হয়) */}
       <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-red-600/5 rounded-full blur-[10vw] pointer-events-none -translate-y-1/2 translate-x-1/4"></div>
@@ -39,12 +39,12 @@ export default function TestimonialSection() {
         
         {/* সেকশন হেডার */}
         <div className="flex flex-col items-center text-center mb-[6vh]">
-          <span className="text-gray-400 text-[3.5vw] md:text-[1vw] tracking-[0.2em] uppercase font-medium mb-[1.5vh]">
+          <span className="text-black text-[3.5vw] md:text-[1vw] tracking-[0.2em] uppercase font-medium mb-[1.5vh]">
             What Clients Say
           </span>
           <div className="flex items-center gap-[1.5vw]">
             <div className="w-[0.8vw] md:w-[0.2vw] h-[5vh] bg-red-600"></div>
-            <h2 className="text-white text-[7vw] md:text-[3.5vw] font-black tracking-widest uppercase leading-none">
+            <h2 className="text-black text-[7vw] md:text-[3.5vw] font-black tracking-widest uppercase leading-none">
               CLIENT TESTIMONIALS
             </h2>
           </div>

@@ -4,7 +4,7 @@ import { FiArrowRight } from "react-icons/fi"; // CTA বাটনের জন�
 
 export default function AboutSection() {
   return (
-    <section id="about" className="relative w-full flex flex-col lg:flex-row bg-[#0A0A0A] overflow-hidden">
+    <section id="about" className="relative w-full flex flex-col lg:flex-row bg-[#fff] overflow-hidden">
       
       {/* বাম পাশ: কন্টেন্ট এবং ওয়াটারমার্ক লোগো */}
       <div className="relative w-full lg:w-1/2 flex flex-col justify-center px-6 py-16 lg:px-12 xl:px-20 z-10 min-h-[50vh] lg:min-h-screen">
@@ -22,20 +22,20 @@ export default function AboutSection() {
 
         {/* মূল কন্টেন্ট (টেক্সট এবং বাটন) */}
         <div className="relative z-10">
-          <span className="text-gray-400 text-sm md:text-base tracking-[0.2em] uppercase font-medium">
+          <span className="text-black text-sm md:text-base tracking-[0.2em] uppercase font-medium">
             About Us
           </span>
           
           <div className="flex items-center gap-4 mt-4 mb-8 md:mb-10">
             {/* লাল লাইন */}
             <div className="w-1.5 md:w-2 h-12 md:h-16 bg-red-600"></div>
-            <h2 className="text-white text-4xl md:text-5xl xl:text-6xl font-bold tracking-wide uppercase leading-tight">
+            <h2 className="text-black text-4xl md:text-5xl xl:text-6xl font-bold tracking-wide uppercase leading-tight">
               Final Cut <br className="hidden lg:block xl:hidden" /> Multimedia
             </h2>
           </div>
 
           {/* প্যারাগ্রাফ টেক্সট */}
-          <div className="space-y-6 text-[#A0A0A0] text-base md:text-lg leading-relaxed font-light pr-0 xl:pr-10">
+          <div className="space-y-6 text-[#000] text-base md:text-lg leading-relaxed font-light pr-0 xl:pr-10">
             <p>
               Final Cut Multimedia is a Charlotte based video production agency helping businesses, brands, and organizations create professional video content that supports real business goals. We specialize in corporate videos, commercials, event coverage, customer testimonials, training videos, and brand storytelling that engage audiences and elevate brands.
             </p>
@@ -49,8 +49,8 @@ export default function AboutSection() {
             href="#contact-us" 
             className="group inline-flex items-center justify-center gap-3 mt-10 
                        w-full sm:w-auto px-8 py-4
-                       border border-red-600 bg-red-600/10 text-white text-sm md:text-base font-semibold tracking-[0.15em] uppercase 
-                       transition-all duration-300 hover:bg-red-600 hover:shadow-[0_0_20px_rgba(220,38,38,0.3)]"
+                       border border-red-600 bg-red-600 text-black text-sm md:text-base font-semibold tracking-[0.15em] uppercase 
+                       transition-all duration-300 hover:bg-red-700 hover:shadow-[0_0_20px_rgba(220,38,38,0.3)]"
           >
             BOOK A DISCOVERY CALL
             <FiArrowRight className="text-xl transition-transform duration-300 group-hover:translate-x-1" />

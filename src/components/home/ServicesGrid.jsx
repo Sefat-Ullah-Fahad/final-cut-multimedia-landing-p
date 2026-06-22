@@ -41,14 +41,14 @@ export default function ServicesGrid() {
   ];
 
   return (
-    <section id="services" className="relative w-full bg-[#0A0A0A] py-20 px-6 md:px-12 xl:px-20">
+    <section id="services" className="relative w-full bg-white py-20 px-6 md:px-12 xl:px-20">
       
       {/* সেকশন হেডার (MORE SERVICES লিংকটি বাদ দেওয়া হয়েছে) */}
       <div className="flex flex-col mb-12">
-        <span className="text-gray-400 text-sm md:text-base tracking-[0.2em] uppercase font-medium block mb-4">
+        <span className="text-black text-sm md:text-base tracking-[0.2em] uppercase font-medium block mb-4">
           Our Core Services
         </span>
-        <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold uppercase leading-tight max-w-4xl">
+        <h2 className="text-black text-3xl md:text-4xl lg:text-5xl font-bold uppercase leading-tight max-w-4xl">
           Tailored Multimedia Solutions To Bring Your Vision To Life
         </h2>
       </div>
@@ -109,7 +109,7 @@ export default function ServicesGrid() {
       <div className="mt-20 flex flex-col items-center">
         <div className="flex items-center gap-4 mb-8">
           <div className="w-6 h-0.5 bg-red-600 hidden md:block"></div>
-          <h3 className="text-white text-lg md:text-xl tracking-[0.2em] uppercase font-bold text-center">
+          <h3 className="text-black text-lg md:text-xl tracking-[0.2em] uppercase font-bold text-center">
             Industries We Serve
           </h3>
           <div className="w-6 h-0.5 bg-red-600 hidden md:block"></div>
@@ -120,7 +120,7 @@ export default function ServicesGrid() {
           {industries.map((industry, index) => (
             <div 
               key={index} 
-              className="border border-white/20 px-5 py-2 md:px-6 md:py-2.5 rounded-full text-gray-300 text-xs md:text-sm uppercase tracking-wider hover:border-red-600 hover:text-white hover:bg-red-600/10 transition-colors cursor-default"
+              className="border border-black/70 px-5 py-2 md:px-6 md:py-2.5 rounded-full text-black text-xs md:text-sm uppercase tracking-wider hover:border-red-600 hover:text-white hover:bg-red-600 transition-colors cursor-default"
             >
               {industry}
             </div>
