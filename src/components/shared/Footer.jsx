@@ -115,7 +115,7 @@ export default function Footer() {
 
         </div>
 
-        {/* কপিরাইট বটম বার */}
+    
         <div className="w-full flex flex-col md:flex-row items-center justify-center text-center pt-[4vh] border-t border-gray-200">
           <p className="text-gray-500 text-[3vw] md:text-[0.8vw] tracking-wider uppercase">
             © 2026 All Rights Reserved. Design & Develop By Final Cut Multimedia
