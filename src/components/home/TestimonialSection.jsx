@@ -1,10 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { FiArrowRight } from "react-icons/fi"; // CTA বাটনের জন্য আইকন
+import { FiArrowRight } from "react-icons/fi"; 
 
 export default function TestimonialSection() {
-  // স্ক্রিনশট থেকে নেওয়া গুগল রিভিউয়ের ডেটা
   const reviews = [
     {
       id: 1,
@@ -32,14 +31,14 @@ export default function TestimonialSection() {
   return (
     <section id="testimonials" className="relative w-full bg-white py-[12vh] px-[5vw] overflow-hidden">
       
-      {/* ব্যাকগ্রাউন্ড ওয়াটারমার্ক (vw ব্যবহার করা হয়েছে যাতে স্ক্রিনের অনুপাতে বড়/ছোট হয়) */}
+      {/* ব্যাকগ্রাউন্ড ওয়াটারমার্ক */}
       <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-red-600/5 rounded-full blur-[10vw] pointer-events-none -translate-y-1/2 translate-x-1/4"></div>
 
       <div className="relative z-10 w-full flex flex-col items-center">
         
         {/* সেকশন হেডার */}
         <div className="flex flex-col items-center text-center mb-[6vh]">
-          <span className="text-black text-[3.5vw] md:text-[1vw] tracking-[0.2em] uppercase font-medium mb-[1.5vh]">
+          <span className="text-gray-500 text-[3.5vw] md:text-[1vw] tracking-[0.2em] uppercase font-bold mb-[1.5vh]">
             What Clients Say
           </span>
           <div className="flex items-center gap-[1.5vw]">
@@ -50,12 +49,11 @@ export default function TestimonialSection() {
           </div>
         </div>
 
-        {/* গুগল রেটিং সামারি */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-[3vw] md:gap-[1.5vw] mb-[8vh] bg-[#111] border border-white/10 py-[2vh] px-[5vw] md:px-[3vw] rounded-[1vw] shadow-lg">
+        {/* গুগল রেটিং সামারি (লাইট থিম) */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-[3vw] md:gap-[1.5vw] mb-[8vh] bg-gray-50 border border-gray-200 py-[2vh] px-[5vw] md:px-[3vw] rounded-[1vw] shadow-sm">
           <div className="flex items-center gap-[2vw] md:gap-[1vw]">
-            <span className="text-white text-[6vw] md:text-[2.5vw] font-bold">4.9</span>
+            <span className="text-black text-[6vw] md:text-[2.5vw] font-black">4.9</span>
             <div className="flex gap-[0.5vw]">
-              {/* ৫টি গোল্ডেন স্টার */}
               {[...Array(5)].map((_, i) => (
                 <svg key={i} className="w-[5vw] h-[5vw] md:w-[1.5vw] md:h-[1.5vw] text-[#FABB05]" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -63,28 +61,28 @@ export default function TestimonialSection() {
               ))}
             </div>
           </div>
-          <div className="hidden md:block w-[0.1vw] h-[4vh] bg-white/20"></div>
-          <span className="text-gray-300 text-[3.5vw] md:text-[1vw] font-medium tracking-wide">
-            Based on <strong className="text-white">114+ reviews</strong> on Google
+          <div className="hidden md:block w-[0.1vw] h-[4vh] bg-gray-300"></div>
+          <span className="text-gray-600 text-[3.5vw] md:text-[1vw] font-medium tracking-wide">
+            Based on <strong className="text-black">114+ reviews</strong> on Google
           </span>
         </div>
 
-        {/* ৩-কলাম রিভিউ কার্ড গ্রিড (Full Width) */}
+        {/* ৩-কলাম রিভিউ কার্ড গ্রিড (লাইট থিম) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-[4vw] md:gap-[2vw] w-full mb-[8vh]">
           {reviews.map((review) => (
             <div 
               key={review.id} 
-              className="group relative flex flex-col bg-[#111] p-[6vw] md:p-[2.5vw] border-[0.2vw] md:border-[0.1vw] border-white/5 hover:border-red-600 hover:shadow-[0_0_1.5vw_rgba(220,38,38,0.2)] transition-all duration-500 rounded-[1vw]"
+              className="group relative flex flex-col bg-gray-50 p-[6vw] md:p-[2.5vw] border-[0.2vw] md:border-[0.1vw] border-gray-200 hover:border-red-600 hover:shadow-[0_0.5vw_1.5vw_rgba(220,38,38,0.15)] transition-all duration-500 rounded-[1vw]"
             >
               {/* ইউজারের ইনফো এবং গুগল আইকন */}
               <div className="flex items-start justify-between mb-[3vh]">
                 <div className="flex items-center gap-[3vw] md:gap-[1vw]">
-                  {/* নামের প্রথম অক্ষর দিয়ে অবতার */}
-                  <div className="w-[12vw] h-[12vw] md:w-[3.5vw] md:h-[3.5vw] rounded-full bg-red-600/20 text-red-500 flex items-center justify-center font-bold text-[5vw] md:text-[1.5vw]">
+                  {/* নামের প্রথম অক্ষর দিয়ে অবতার (লাইট থিম) */}
+                  <div className="w-[12vw] h-[12vw] md:w-[3.5vw] md:h-[3.5vw] rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold text-[5vw] md:text-[1.5vw]">
                     {review.name.charAt(0)}
                   </div>
                   <div className="flex flex-col">
-                    <h3 className="text-white text-[4vw] md:text-[1.1vw] font-bold tracking-wide">
+                    <h3 className="text-black text-[4vw] md:text-[1.1vw] font-bold tracking-wide">
                       {review.name}
                     </h3>
                     <span className="text-gray-500 text-[3vw] md:text-[0.8vw]">
@@ -92,7 +90,7 @@ export default function TestimonialSection() {
                     </span>
                   </div>
                 </div>
-                {/* গুগল আইকন (SVG) */}
+                {/* গুগল আইকন */}
                 <svg className="w-[6vw] h-[6vw] md:w-[1.8vw] md:h-[1.8vw]" viewBox="0 0 24 24">
                   <path fill="#4285F4" d="M23.745 12.27c0-.825-.07-1.635-.2-2.43H12.2v4.54h6.54c-.29 1.48-1.12 2.74-2.35 3.58v2.96h3.76c2.2-2.03 3.47-5.02 3.47-8.65z"/>
                   <path fill="#34A853" d="M12.2 24c3.24 0 5.96-1.08 7.95-2.91l-3.76-2.96c-1.08.72-2.45 1.15-4.19 1.15-3.23 0-5.96-2.18-6.94-5.11H1.37v3.06C3.36 21.17 7.44 24 12.2 24z"/>
@@ -110,20 +108,20 @@ export default function TestimonialSection() {
                 ))}
               </div>
 
-              {/* রিভিউ টেক্সট */}
-              <p className="text-gray-400 text-[3.5vw] md:text-[0.95vw] leading-relaxed italic flex-grow">
+              {/* রিভিউ টেক্সট (ডার্ক গ্রে) */}
+              <p className="text-gray-600 text-[3.5vw] md:text-[0.95vw] leading-relaxed italic flex-grow font-medium">
                 &quot;{review.text}&quot;
               </p>
             </div>
           ))}
         </div>
 
-        {/* 2nd CTA Button - Exit point রিমুভ করে লিড জেনারেশনের জন্য CTA দেওয়া হয়েছে */}
+        {/* 2nd CTA Button */}
         <Link 
           href="#contact-us" 
           className="group inline-flex items-center justify-center gap-[1vw] 
                      w-full sm:w-auto px-[6vw] py-[2vh] md:px-[3vw] md:py-[1.5vh]
-                     bg-red-600 text-white text-[3.5vw] md:text-[0.9vw] font-semibold tracking-[0.15em] uppercase 
+                     bg-red-600 text-white text-[3.5vw] md:text-[0.9vw] font-bold tracking-[0.15em] uppercase 
                      transition-all duration-300 hover:bg-red-700 hover:shadow-[0_0_1.5vw_rgba(220,38,38,0.4)]"
         >
           START YOUR PROJECT TODAY
