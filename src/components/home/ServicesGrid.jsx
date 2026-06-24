@@ -37,7 +37,15 @@ export default function ServicesGrid() {
       subtitle: "ENGAGING",
       title: "CONTENT FOR SOCIAL MEDIA",
       desc: "Short-form, platform-optimized content built to capture attention, promotions and boost online engagement.",
-      image: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/1000_F_85861337_0ZeiHG0IC2vPZrQd26KT9SDj4LU9O4fF-1.webp", 
+      image: "https://finalcutmultimedia.com/wp-content/uploads/2025/11/pbokepuiqgmlaczczfmx1.jpg",
+    },
+    // নতুন ৬ নম্বর কার্ডটি যুক্ত করা হলো
+    {
+      id: 6,
+      subtitle: "SPECIALIZED",
+      title: "ADDITIONAL PRODUCTION SERVICES",
+      desc: "Specialized production services including drone coverage, professional headshots, live streaming, documentary storytelling, and training video production.",
+      image: "https://res.cloudinary.com/dsga4gyw9/image/upload/v1782303344/77a8283e-cbd6-4b7e-af4c-1e424670ed13_fukogo.png", // এখানে ক্লায়েন্টের পছন্দমতো একটি ছবি বসিয়ে নিবেন
     },
   ];
 
@@ -58,15 +66,12 @@ export default function ServicesGrid() {
         </h2>
       </div>
 
-      {/* ২-কলাম সার্ভিস গ্রিড */}
+      {/* ২-কলাম সার্ভিস গ্রিড (৬টি কার্ড এখন সমানভাবে বসে যাবে) */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-        {services.map((item, index) => (
+        {services.map((item) => (
           <div 
             key={item.id} 
-            // ৫ নম্বর আইটেম (index 4) হলে সেটি যেন ২ কলামের জায়গা নিয়ে ঠিক মাঝখানে থাকে তার জন্য কন্ডিশনাল ক্লাস
-            className={`relative w-full h-[350px] sm:h-[400px] md:h-[450px] group block overflow-hidden bg-black cursor-default ${
-              index === 4 ? "md:col-span-2 md:w-[calc(50%-12px)] md:mx-auto" : ""
-            }`}
+            className="relative w-full h-[350px] sm:h-[400px] md:h-[450px] group block overflow-hidden bg-black cursor-default"
           >
             {/* ব্যাকগ্রাউন্ড ইমেজ */}
             <Image

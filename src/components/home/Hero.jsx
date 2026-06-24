@@ -21,27 +21,26 @@ export default function HeroSection() {
           Your browser does not support the video tag.
         </video>
         
-        {/* Cinematic Gradient Overlay (লুক আরও প্রিমিয়াম করার জন্য সলিড কালারের বদলে গ্রেডিয়েন্ট) */}
+        {/* Cinematic Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/90"></div>
       </div>
 
       {/* Hero Content */}
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 w-full max-w-5xl mx-auto mt-16 md:mt-0">
         
-        {/* Main Title */}
+        {/* Main Title (ক্লায়েন্টের নতুন টেক্সট) */}
         <h1 className="text-white font-black tracking-tight mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight drop-shadow-2xl">
-          Professional Video Production 
-          That Helps Your Business <span className="text-red-600">Stand Out</span>
+          Charlotte is Trusted <span className="text-red-600">Video Production Company</span>
         </h1>
 
-        {/* Sub-headline */}
+        {/* Sub-headline (ক্লায়েন্টের নতুন টেক্সট) */}
         <p className="text-gray-300 font-medium mb-10 text-base sm:text-lg md:text-xl max-w-3xl leading-relaxed drop-shadow-md">
-          We craft cinematic visuals and compelling stories that capture attention, build trust, and drive real results for your brand.
+          Event coverage, corporate videos, commercials, training videos, and monthly content creation designed to support real business goals.
         </p>
 
-        {/* Call to Action Button - Single Primary CTA for Better Conversion */}
+        {/* Call to Action Button */}
         <Link 
-          href="#contact-us" // ক্লায়েন্ট কন্টাক্ট বা ইনকোয়ারিতে নিতে বলেছে
+          href="#contact" // ন্যাভিগেশন মেনুর সাথে মিল রাখার জন্য #contact করা হয়েছে
           className="group relative inline-flex items-center justify-center gap-3 
                      w-full sm:w-auto px-8 py-4
                      border-2 border-red-600 bg-red-600 
