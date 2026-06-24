@@ -53,7 +53,7 @@ export default function ProcessSection() {
    
           
           
-          <div className="absolute bottom-[4vh] left-[4vw] border-l-[0.3vw] border-red-600 pl-[1.5vw]">
+          <div className="absolute bottom-[4vh] left-[4vw] border-l-[0.3vw] border-red-600 pl-[.5vw]">
             <h3 className="text-black text-[6vw] md:text-[2vw] font-black uppercase tracking-widest leading-none mb-[1vh]">
               Jane Caillio
             </h3>
@@ -77,7 +77,7 @@ export default function ProcessSection() {
           
           <div className="space-y-[3vh] text-gray-600 text-[4vw] md:text-[1.1vw] leading-relaxed pr-0 lg:pr-[5vw]">
             <p>
-              At Final Cut Multimedia, our production process is built around <strong className="text-black font-bold">you</strong>. Jane, our dedicated Operations Coordinator, plays an integral role in ensuring your experience is completely seamless.
+              At Final Cut Multimedia, our production process is built around you. Jane, our dedicated Operations Coordinator, plays an integral role in ensuring your experience is completely seamless.
             </p>
             <p>
               From managing project coordination and clear communication to detailed scheduling, Jane ensures every aspect of your project runs flawlessly. We pride ourselves on a transparent, collaborative approach that brings your creative vision to life without any hassle.
