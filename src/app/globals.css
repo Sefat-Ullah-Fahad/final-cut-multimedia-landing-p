@@ -10,6 +10,12 @@
 }
 
 
+html {
+  scroll-behavior: smooth;
+}
+
+
+
 /* লেনিস স্মুথ স্ক্রলের জন্য গ্লোবাল ফিক্স */
 html.lenis, html.lenis body {
   height: auto !important; /* layout.js এর h-full কে ওভাররাইড করার জন্য */

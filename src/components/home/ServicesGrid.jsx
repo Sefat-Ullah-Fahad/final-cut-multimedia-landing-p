@@ -3,39 +3,44 @@
 import Image from "next/image";
 
 export default function ServicesGrid() {
-  // সোশ্যাল মিডিয়া সার্ভিসটি বাদ দিয়ে বাকি ৪টি সার্ভিস রাখা হয়েছে
   const services = [
     {
       id: 1,
       subtitle: "PROFESSIONAL",
-      title: "CORPORATE VIDEO",
-      desc: "Commercials, interviews, brand stories, promotional videos tailored for businesses.",
+      title: "VIDEO PRODUCTION",
+      desc: "High-quality video storytelling crafted to engage your audience and showcase your brand with professionalism.",
       image: "https://finalcutmultimedia.com/wp-content/uploads/2025/11/pbokepuiqgmlaczczfmx1.jpg",
     },
     {
       id: 2,
-      subtitle: "CREATIVE",
-      title: "PHOTOGRAPHY",
-      desc: "Corporate headshots, event coverage, product photography, and lifestyle.",
-      image: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/ebe708e3-7864-45f8-b7c6-4efaec1b19371.jpg",
+      subtitle: "CINEMATIC",
+      title: "VIDEO EDITING",
+      desc: "Transform raw footage into polished productions with seamless cuts, sound design, and cinematic finishing.",
+      image: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/Mac-Two-Computers-Display.jpg",
     },
     {
       id: 3,
-      subtitle: "CINEMATIC",
-      title: "VIDEO EDITING",
-      desc: "Post-production, color grading, sound design, and stunning visual effects.",
-      image: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/Mac-Two-Computers-Display.jpg",
+      subtitle: "CREATIVE",
+      title: "PHOTOGRAPHY",
+      desc: "Creative and detailed photography for events, products, and portraits, capturing moments that last a lifetime.",
+      image: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/ebe708e3-7864-45f8-b7c6-4efaec1b19371.jpg",
     },
     {
       id: 4,
       subtitle: "MEMORABLE",
       title: "EVENT COVERAGE",
-      desc: "High-quality video and photo coverage for corporate events, conferences, and live shows.",
+      desc: "Professional coverage of conferences, seminars, and business gatherings, presenting your company at its best.",
       image: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/IMG_2841-scaled.jpeg",
+    },
+    {
+      id: 5,
+      subtitle: "ENGAGING",
+      title: "CONTENT FOR SOCIAL MEDIA",
+      desc: "Short-form, platform-optimized content built to capture attention, promotions and boost online engagement.",
+      image: "https://finalcutmultimedia.com/wp-content/uploads/2025/10/1000_F_85861337_0ZeiHG0IC2vPZrQd26KT9SDj4LU9O4fF-1.webp", 
     },
   ];
 
-  // ইন্ডাস্ট্রি লিস্ট
   const industries = [
     "Real Estate", "Automotive", "Corporate", "Healthcare", "Education", "Entertainment", "E-commerce", "Hospitality"
   ];
@@ -43,7 +48,7 @@ export default function ServicesGrid() {
   return (
     <section id="services" className="relative w-full bg-white py-20 px-6 md:px-12 xl:px-20">
       
-      {/* সেকশন হেডার (MORE SERVICES লিংকটি বাদ দেওয়া হয়েছে) */}
+      {/* সেকশন হেডার */}
       <div className="flex flex-col mb-12">
         <span className="text-black text-sm md:text-base tracking-[0.2em] uppercase font-medium block mb-4">
           Our Core Services
@@ -53,13 +58,15 @@ export default function ServicesGrid() {
         </h2>
       </div>
 
-      {/* ২-কলাম সার্ভিস গ্রিড (পারফেক্ট 2x2 গ্রিড) */}
+      {/* ২-কলাম সার্ভিস গ্রিড */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-        {services.map((item) => (
-          // Link এর বদলে div ব্যবহার করা হয়েছে যাতে ভিজিটররা ক্লিক করে অন্য পেজে চলে না যায়
+        {services.map((item, index) => (
           <div 
             key={item.id} 
-            className="relative w-full h-[350px] sm:h-[400px] md:h-[450px] group block overflow-hidden bg-black cursor-default"
+            // ৫ নম্বর আইটেম (index 4) হলে সেটি যেন ২ কলামের জায়গা নিয়ে ঠিক মাঝখানে থাকে তার জন্য কন্ডিশনাল ক্লাস
+            className={`relative w-full h-[350px] sm:h-[400px] md:h-[450px] group block overflow-hidden bg-black cursor-default ${
+              index === 4 ? "md:col-span-2 md:w-[calc(50%-12px)] md:mx-auto" : ""
+            }`}
           >
             {/* ব্যাকগ্রাউন্ড ইমেজ */}
             <Image
@@ -87,7 +94,7 @@ export default function ServicesGrid() {
                 <div className="absolute top-0 right-0 w-1 h-0 bg-white/90 group-hover:h-full transition-all duration-[400ms] ease-in-out delay-[300ms]"></div>
 
                 {/* ভেতরের টেক্সট */}
-                <span className="text-white text-xs md:text-sm font-medium tracking-[0.3em] uppercase mb-3 drop-shadow-md z-10 transition-transform duration-[400ms] group-hover:-translate-y-4">
+                <span className="text-white text-xs md:text-sm font-medium tracking-[0.3em] uppercase mb-3 drop-shadow-md z-10 transition-transform duration-[400ms] group-hover:-translate-y-4 text-center">
                   {item.subtitle}
                 </span>
                 <h3 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold tracking-wider uppercase text-center px-4 drop-shadow-lg leading-tight z-10 transition-transform duration-[400ms] group-hover:-translate-y-4">

@@ -11,32 +11,42 @@ import ContactSection from "@/components/home/ContactSection";
 export default function Home() {
   return (
     <main>
-      {/* 1. Hero (Done) */}
-      <HeroSection />
+      {/* 1. Hero */}
+      <section id="hero">
+        <HeroSection />
+      </section>
       
-      {/* 2. About & Credibility (Done) */}
-      <AboutSection />
+      {/* 2. About & Credibility */}
+      <section id="about">
+        <AboutSection />
+      </section>
       
       {/* 3. Why Work With Us / Trust Elements */}
       <StatsCounter />
       
-      {/* 4. Featured Productions (Done - 1st CTA added inside) */}
+      {/* 4. Featured Productions */}
       <VideoGallery />
       
-      {/* 5. Services & Industries Served (Done) */}
-      <ServicesGrid />
+      {/* 5. Services & Industries Served */}
+      <section id="services">
+        <ServicesGrid />
+      </section>
       
-      {/* 6. Client Logos (Trust Element - YouTube Removed) */}
+      {/* 6. Client Logos */}
       <ClientMarquee />
       
-      {/* 7. Client Testimonials (Next step: add 2nd CTA inside or after this) */}
+      {/* 7. Client Testimonials */}
       <TestimonialSection />
       
-      {/* 8. Process / How It Works (Next step: integrate Jane's unedited photos here) */}
-      <ProcessSection />
+      {/* 8. Process / How It Works */}
+      <section id="process">
+        <ProcessSection />
+      </section>
       
       {/* 9. Contact / Inquiry Form */}
-      <ContactSection />
+      <section id="contact">
+        <ContactSection />
+      </section>
     </main>
   );
 }
