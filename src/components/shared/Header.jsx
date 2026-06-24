@@ -18,7 +18,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // ডাইনামিক হেডার ক্লাস লজিক (আপনার আগের কোডের মতোই রাখা হয়েছে)
+  // ডাইনামিক হেডার ক্লাস লজিক
   const getHeaderClasses = () => {
     if (scrollY <= 150) {
       return "absolute top-0 left-0 py-6 bg-transparent";
@@ -43,7 +43,7 @@ export default function Header() {
       <header className={`w-full z-50 ${getHeaderClasses()}`}>
         <div className="max-w-[95%] mx-auto flex items-center justify-between">
           
-          {/* লোগো (আপনার আগের কোড) */}
+          {/* লোগো */}
           <Link href="#hero" className="flex items-center gap-3">
             <div className="relative w-12 h-12 md:w-14 md:h-14">
               <Image
@@ -57,10 +57,20 @@ export default function Header() {
             </div>
             
             <div className="flex flex-col justify-center">
-              <span className="text-black text-base md:text-lg font-black leading-none tracking-wide whitespace-nowrap">
+              {/* FINAL CUT - স্ক্রলের ওপর ভিত্তি করে কালার চেঞ্জ */}
+              <span 
+                className={`text-base md:text-lg font-black leading-none tracking-wide whitespace-nowrap transition-colors duration-300 ${
+                  scrollY > 150 ? "text-black" : "text-white"
+                }`}
+              >
                 FINAL CUT
               </span>
-              <span className="text-gray-600 text-[9px] md:text-[10px] font-bold tracking-[0.2em] leading-none mt-1 whitespace-nowrap">
+              {/* MULTIMEDIA - স্ক্রলের ওপর ভিত্তি করে কালার চেঞ্জ */}
+              <span 
+                className={`text-[9px] md:text-[10px] font-bold tracking-[0.2em] leading-none mt-1 whitespace-nowrap transition-colors duration-300 ${
+                  scrollY > 150 ? "text-gray-600" : "text-white/80"
+                }`}
+              >
                 MULTIMEDIA
               </span>
             </div>
@@ -72,7 +82,6 @@ export default function Header() {
               <div key={index} className="relative group py-4">
                 <Link
                   href={item.href}
-                  // কন্ডিশনাল টেক্সট কালার আগের মতই আছে
                   className={`text-[10px] 2xl:text-[11px] font-bold tracking-widest uppercase flex items-center gap-1 transition-colors duration-300 hover:text-red-600 ${
                     scrollY > 150 ? "text-gray-800" : "text-white"
                   }`}
@@ -83,10 +92,12 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* মোবাইল মেনু বাটন (আপনার আগের কোড) */}
+          {/* মোবাইল মেনু বাটন (স্ক্রলের ওপর ভিত্তি করে কালার চেঞ্জ) */}
           <button 
             onClick={() => setIsMobileMenuOpen(true)}
-            className="xl:hidden text-black flex items-center gap-2 hover:text-red-600 transition-colors"
+            className={`xl:hidden flex items-center gap-2 hover:text-red-600 transition-colors duration-300 ${
+              scrollY > 150 ? "text-black" : "text-white"
+            }`}
           >
             <span className="text-xs font-bold tracking-widest uppercase">Menu</span>
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -97,7 +108,7 @@ export default function Header() {
         </div>
       </header>
 
-      {/* মোবাইল ফুল-স্ক্রিন মেনু (আপনার লাইট থিম ডিজাইন) */}
+      {/* মোবাইল ফুল-স্ক্রিন মেনু */}
       <div 
         className={`fixed inset-0 bg-white z-[60] overflow-y-auto px-6 py-10 transition-all duration-500 ease-in-out ${
           isMobileMenuOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-8"
@@ -118,7 +129,6 @@ export default function Header() {
             <div key={index} className="flex flex-col gap-3">
               <Link
                 href={item.href}
-                // লিংকে ক্লিক করলে যেন মেনু ক্লোজ হয়ে যায়
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-black text-lg font-black tracking-widest uppercase hover:text-red-600"
               >
