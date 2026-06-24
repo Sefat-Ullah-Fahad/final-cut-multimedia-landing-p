@@ -44,17 +44,17 @@ export default function ProcessSection() {
         {/* Jane's Photo */}
         <div className="relative w-full lg:w-[45vw] h-[50vh] md:h-[75vh] rounded-[1vw] overflow-hidden group border-[0.1vw] border-gray-200 shadow-[0_0_3vw_rgba(0,0,0,0.1)]">
           <Image
-            src="https://res.cloudinary.com/dsga4gyw9/image/upload/v1781932101/Copy_of_IMG_3032_yqh6mr.jpg"
+            src="https://res.cloudinary.com/dp08caz1r/image/upload/v1782312831/Copy_of_IMG_3032_yqh6mr-Photoroom_tklac4.png"
             alt="Jane Caillio - Operations Coordinator"
             fill
             className="object-cover contrast-125 brightness-90 saturate-[0.8] group-hover:scale-105 transition-transform duration-[1500ms] ease-out"
             unoptimized
           />
           {/* ছবির টেক্সট পড়ার জন্য ডার্ক ওভারলে রাখা হয়েছে */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+          
           
           <div className="absolute bottom-[4vh] left-[4vw] border-l-[0.3vw] border-red-600 pl-[1.5vw]">
-            <h3 className="text-white text-[6vw] md:text-[2vw] font-black uppercase tracking-widest leading-none mb-[1vh]">
+            <h3 className="text-black text-[6vw] md:text-[2vw] font-black uppercase tracking-widest leading-none mb-[1vh]">
               Jane Caillio
             </h3>
             <p className="text-red-400 text-[3.5vw] md:text-[1vw] font-bold tracking-[0.2em] uppercase">

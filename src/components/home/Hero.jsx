@@ -30,7 +30,7 @@ export default function HeroSection() {
         
         {/* Main Title (ক্লায়েন্টের নতুন টেক্সট) */}
         <h1 className="text-white font-black tracking-tight mb-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight drop-shadow-2xl">
-          Charlotte is Trusted <span className="text-red-600">Video Production Company</span>
+          Charlotte's Trusted <span className="text-red-600">Video Production Company</span>
         </h1>
 
         {/* Sub-headline (ক্লায়েন্টের নতুন টেক্সট) */}

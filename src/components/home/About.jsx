@@ -66,7 +66,7 @@ export default function AboutSection() {
         <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white/30 to-transparent z-10 hidden lg:block"></div>
         
         <Image
-          src="https://res.cloudinary.com/dsga4gyw9/image/upload/v1781697016/Use_this_picture_k9euqa.jpg"
+          src="https://res.cloudinary.com/dsga4gyw9/image/upload/v1782312146/Adobe_Express_-_file_ieu1wv.png"
           alt="Final Cut Multimedia Team"
           fill
           className="object-contain object-center" 
