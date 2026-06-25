@@ -66,7 +66,7 @@ export default function AboutSection() {
         <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white/30 to-transparent z-10 hidden lg:block"></div>
         
         <Image
-          src="https://res.cloudinary.com/dp08caz1r/image/upload/v1782313907/Use_this_picture_k9euqa-Photoroom_ohhmnb.png"
+          src="https://res.cloudinary.com/dp08caz1r/image/upload/v1782381372/WhatsApp_Image_2026-06-25_at_3.39.31_PM-Photoroom_rym1ss.png"
           alt="Final Cut Multimedia Team"
           fill
           className="object-contain object-center" 
